@@ -1,4 +1,4 @@
-* determine the license to use (MIT or Apache?)
+* determine the license to use (MIT, Apache, OSET?)
 * identify every question and a regex for each response
 * put together a spec and a validator
 * refuse to function without SSL

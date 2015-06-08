@@ -1,114 +1,161 @@
 -
- label: Your Name & SSN
- description: name and SSN
- members:
+ Your Name & SSN:
+  required: true
+  members:
    -
     label: Last Name
+    required: true
    -
     label: Middle Name
+    required: false
    -
     label: First Name
+    required: true
    -
     label: Suffix
+    required: false
    -
     label: Social Security #
     note: Last 4 digits required
+    required: true
 -
  Election:
-  -
-   label: I am applying to vote in
-   options:
-    - General or Special Election
-    - Democratic Primary
-    - Republican Primary
-  -
-   label: Date of Election
-  -
-   label: I am registered to vote in the
-   options:
-    - City
-    - County of
+  members:
+   -
+    label: I am applying to vote in
+    options:
+     - General or Special Election
+     - Democratic Primary
+     - Republican Primary
+    required: true
+   -
+    label: Date of Election
+    required: true
+   -
+    label: I am registered to vote in the
+    options:
+     - City
+     - County of
+    required: true
 -
  Reason for Absentee Ballot:
    note: Your application will be denied if a qualifying reason and required information are not provided
-   -
-    label: Reason Code
-   -
-    label: Supporting Info
-    note: if required
+   members:
+    -
+     label: Reason Code
+     required: true
+    -
+     label: Supporting Info
+     required: false
+     note: if required
 - More Info:
    note: optional
-   -
-    label: Birth Year
-   -
-    label: Email/Fax
-   -
-    label: Telephone
+   required: false
+   members:
+    -
+     label: Birth Year
+     required: false
+    -
+     label: Email/Fax
+     required: false
+    -
+     label: Telephone
+     required: false
 - Residence Address:
    note: if rural address/homeless describe residence
-   -
-    label: Address
-   -
-    label: APT/Suite #
-   -
-    label: City
-   -
-    label: State
-   -
-    label: Zip Code
+   required: true
+   members:
+    -
+     label: Address
+     required: true
+    -
+     label: APT/Suite #
+     required: false
+    -
+     label: City
+     required: true
+    -
+     label: State
+     required: true
+    -
+     label: Zip Code
+     required: true
 - Delivery of Ballot:
    note: See instructions
-   -
-    label: "I would like my ballot delivered to:"
-    options:
-     - Residence Address (provided in Part #5)
-     - Email (6A–6D Only)
-     - Mail Address (Provide below)
-     - Fax (6A–6D only) (Provide in Part #4)
-   -
-    label: Address
-   -
-    label: APT/Suite #
-   -
-    label: City
-   -
-    label: State/Country
-   -
-    label: Zip Code
+   members:
+    -
+     label: "I would like my ballot delivered to:"
+     options:
+      - Residence Address (provided in Part #5)
+      - Email (6A–6D Only)
+      - Mail Address (Provide below)
+      - Fax (6A–6D only) (Provide in Part #4)
+     required: true
+    -
+     label: Address
+     required: true
+    -
+     label: APT/Suite #
+     required: false
+    -
+     label: City
+     required: true
+    -
+     label: State/Country
+     required: true
+    -
+     label: Zip Code
+     required: false
 - Change of Name/Address:
    note: If changing registration name/address
-   -
-    label: Former Full Name
-    
-   -
-    label: Former Address
-   -
-    label: Date Moved
-- Assistance to Vote
+   required: false
+   members:
+    -
+     label: Former Full Name
+     required: true
+    -
+     label: Former Address
+     required: true
+    -
+     label: Date Moved
+     required: true
+- Assistance to Vote:
    -
     label: I will need assistance in competing my ballot due to a disability, blindness, or an inability to read or write. If checked, assistance form will be provided with ballot.
+    required: false
 - Assistant's Statement/Info:
    note: If applicant is unable to sign due to disability
+   required: false
    text: I swear/affirm, under felony penalty for making willfully false material statements, that the information I have provided on this form is true and I have written on the Applicant’s signature line in part #10 “Applicant Unable to Sign.”
    text: Provide Information of Assistant
-   -
-    label: Full Name
-   -
-    label: Address
-   -
-    label: APT/Suite #
-   -
-    label: City
-   -
-    label: State
-   -
-    label: Zip Code
-   -
-    label: Signature
+   members:
+    -
+     label: Full Name
+     required: true
+    -
+     label: Address
+     required: true
+    -
+     label: APT/Suite #
+     required: false
+    -
+     label: City
+     required: true
+    -
+     label: State
+     required: true
+    -
+     label: Zip Code
+     required: true
+    -
+     label: Signature
+     required: true
 - Applicant Signature:
-   - text: "I swear/affirm, under felony penalty for making willfully false material statements, that (1) the information I have provided on this form is true, and (2) I am notrequesting a ballot or voting in any other jurisdiction in the U.S., except the jurisdiction to which this application relates."
-   -
-    label: Signature
-    note: or mark if unable to sign
-   -
-    label: Today's Date
+   text: "I swear/affirm, under felony penalty for making willfully false material statements, that (1) the information I have provided on this form is true, and (2) I am notrequesting a ballot or voting in any other jurisdiction in the U.S., except the jurisdiction to which this application relates."
+   required: true
+   members:
+    -
+     label: Signature
+     note: or mark if unable to sign
+    -
+     label: Today's Date

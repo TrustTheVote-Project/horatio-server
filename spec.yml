@@ -1,161 +1,268 @@
 -
  Your Name & SSN:
   required: true
+  id: name
   members:
    -
     label: Last Name
     required: true
+    input: text
+    id: last
+    size: 64
    -
     label: Middle Name
     required: false
+    input: text
+    id: middle
+    size: 64
    -
     label: First Name
     required: true
+    input: text
+    id: last
+    size: 64
    -
     label: Suffix
     required: false
+    input: text
+    id: suffix
+    size: 16
    -
     label: Social Security #
     note: Last 4 digits required
     required: true
+    input: text
+    id: ssn
+    size: 4
 -
  Election:
+  id: election
   members:
    -
     label: I am applying to vote in
+    input: select
     options:
      - General or Special Election
      - Democratic Primary
      - Republican Primary
     required: true
+    id: type
    -
     label: Date of Election
     required: true
+    input: date
+    id: date
    -
     label: I am registered to vote in the
     options:
      - City
      - County of
     required: true
+    input: text
+    size: 64
+    id: locality
 -
  Reason for Absentee Ballot:
    note: Your application will be denied if a qualifying reason and required information are not provided
+   id: reason
    members:
     -
      label: Reason Code
      required: true
+     id: code
+     input: text
+     size: 2
     -
      label: Supporting Info
      required: false
      note: if required
+     input: textarea
+     size: 1024
 - More Info:
    note: optional
    required: false
+   id: more_info
    members:
     -
      label: Birth Year
      required: false
+     id: birth_year
+     input: date
+     size: 4
     -
      label: Email/Fax
      required: false
+     id: email_fax
+     input: text
+     size: 128
     -
      label: Telephone
      required: false
+     id: telephone
+     input: text
+     size: 15
 - Residence Address:
    note: if rural address/homeless describe residence
    required: true
+   id: address
    members:
     -
      label: Address
      required: true
+     id: street
+     input: text
+     size: 128
     -
      label: APT/Suite #
      required: false
+     id: unit
+     input: text
+     size: 32
     -
      label: City
      required: true
+     id: city
+     input: text
+     size: 32
     -
      label: State
      required: true
+     id: state
+     input: text
+     size: 2
     -
      label: Zip Code
      required: true
+     id: zip
+     input: text
+     size: 5
 - Delivery of Ballot:
    note: See instructions
+   id: delivery
    members:
     -
      label: "I would like my ballot delivered to:"
+     input: select
      options:
       - Residence Address (provided in Part #5)
       - Email (6A–6D Only)
       - Mail Address (Provide below)
       - Fax (6A–6D only) (Provide in Part #4)
      required: true
+     id: to
     -
      label: Address
      required: true
+     id: street
+     input: text
+     size: 128
     -
      label: APT/Suite #
      required: false
+     id: unit
+     input: text
+     size: 32
     -
      label: City
      required: true
+     id: city
+     input: text
+     size: 32
     -
      label: State/Country
      required: true
+     id: state_or_country
+     input: text
+     size: 64
     -
      label: Zip Code
      required: false
+     input: text
+     size: 10
 - Change of Name/Address:
    note: If changing registration name/address
    required: false
+   id: change
    members:
     -
      label: Former Full Name
      required: true
+     id: former_name
+     input: text
+     size: 128
     -
      label: Former Address
      required: true
+     id: former_address
+     input: text
+     size: 128
     -
      label: Date Moved
      required: true
+     id: date_moved
+     input: date
 - Assistance to Vote:
-   -
-    label: I will need assistance in competing my ballot due to a disability, blindness, or an inability to read or write. If checked, assistance form will be provided with ballot.
-    required: false
+   label: I will need assistance in competing my ballot due to a disability, blindness, or an inability to read or write. If checked, assistance form will be provided with ballot.
+   required: false
+   input: checkbox
+   id: assistance
 - Assistant's Statement/Info:
    note: If applicant is unable to sign due to disability
    required: false
    text: I swear/affirm, under felony penalty for making willfully false material statements, that the information I have provided on this form is true and I have written on the Applicant’s signature line in part #10 “Applicant Unable to Sign.”
    text: Provide Information of Assistant
+   id: assistant
    members:
     -
      label: Full Name
      required: true
+     id: name
+     input: text
+     size: 128
     -
      label: Address
      required: true
+     id: street
+     input: text
+     size: 128
     -
      label: APT/Suite #
      required: false
+     id: unit
+     input: text
+     size: 32
     -
      label: City
      required: true
+     id: city
+     input: text
+     size: 64
     -
      label: State
      required: true
+     id: unit
+     input: text
+     size: 2
     -
      label: Zip Code
      required: true
+     id: zip
+     input: text
+     size: 5
     -
      label: Signature
      required: true
+     id: signature
 - Applicant Signature:
-   text: "I swear/affirm, under felony penalty for making willfully false material statements, that (1) the information I have provided on this form is true, and (2) I am notrequesting a ballot or voting in any other jurisdiction in the U.S., except the jurisdiction to which this application relates."
+   text: "I swear/affirm, under felony penalty for making willfully false material statements, that by pressing the Submit button and submitting this information that (1) the information I have provided on this form is true, (2) I am not requesting a ballot or voting in any other jurisdiction in the U.S., except the jurisdiction to which this application relates, and (3) that I am the person named in this absentee application."
    required: true
+   id: signature
    members:
     -
      label: Signature
-     note: or mark if unable to sign
+     id: signed
+     input: checkbox
     -
      label: Today's Date
+     id: date
+     input: date

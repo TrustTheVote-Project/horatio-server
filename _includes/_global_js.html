@@ -1,7 +1,7 @@
 <!-- This should be inserted in the page *before* any page-specific JS -->
-<script src="/javascripts/jquery.js"></script>
-<script src="/javascripts/bootstrap.min.js"></script>
-{% for js_name in page.extra_js %}<script src="/javascripts/{{ js_name }}"></script>{% endfor %}
+<script src="javascripts/jquery.js"></script>
+<script src="javascripts/bootstrap.min.js"></script>
+{% for js_name in page.extra_js %}<script src="javascripts/{{ js_name }}"></script>{% endfor %}
 
 {% if page.deeplink == true %}
 <script>

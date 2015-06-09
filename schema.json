@@ -136,8 +136,8 @@
                 "city": {
                     "id": "city",
                     "type": "string",
-                    "minLength": "3",
-                    "maxLength": "32"
+                    "minLength": 3,
+                    "maxLength": 32
                 },
                 "state": {
                     "id": "state",
@@ -162,26 +162,38 @@
                 },
                 "street": {
                     "id": "street",
-                    "type": "string"
+                    "type": "string",
+                    "minLength": 5,
+                    "maxLength": 128
                 },
                 "unit": {
                     "id": "unit",
-                    "type": "string"
+                    "type": "string",
+                    "minLength": 1,
+                    "maxLength": 32
                 },
                 "city": {
                     "id": "city",
-                    "type": "string"
+                    "type": "string",
+                    "minLength": 3,
+                    "maxLength": 32
                 },
                 "state_or_country": {
                     "id": "state_or_country",
-                    "type": "string"
+                    "type": "string",
+                    "minLength": 3,
+                    "maxLength": 64,
+                    "_comment": "There should be separate state and country fields."
                 },
                 "zip": {
                     "id": "zip",
-                    "type": "string"
+                    "type": "string",
+                    "maxLength": 10,
+                    "_comment": "Postal codes vary enormously between countries. Not all countries use them."
                 }
             },
-            "additionalProperties": false
+            "additionalProperties": false,
+            "required": ["to"]
         },
         "change": {
             "id": "change",
@@ -189,15 +201,18 @@
             "properties": {
                 "former_name": {
                     "id": "former_name",
-                    "type": "string"
+                    "type": "string",
+                    "maxLength": 128
                 },
                 "former_address": {
                     "id": "former_address",
-                    "type": "string"
+                    "type": "string",
+                    "maxLength": 128
                 },
                 "date_moved": {
                     "id": "date_moved",
-                    "type": "string"
+                    "type": "string",
+                    "format": "date-time"
                 }
             },
             "additionalProperties": false
@@ -212,27 +227,37 @@
             "properties": {
                 "name": {
                     "id": "name",
-                    "type": "string"
+                    "type": "string",
+                    "maxLength": 128
                 },
                 "street": {
                     "id": "street",
-                    "type": "string"
+                    "type": "string",
+                    "minLength": 5,
+                    "maxLength": 128
                 },
                 "unit": {
                     "id": "unit",
-                    "type": "string"
+                    "type": "string",
+                    "minLength": 1,
+                    "maxLength": 32
                 },
                 "city": {
                     "id": "city",
-                    "type": "string"
+                    "type": "string",
+                    "minLength": 3,
+                    "maxLength": 32
                 },
                 "state": {
                     "id": "state",
-                    "type": "string"
+                    "type": "string",
+                    "minLength": 3,
+                    "maxLength": 64,
                 },
                 "zip": {
                     "id": "zip",
-                    "type": "string"
+                    "type": "string",
+                    "pattern": "[0-9]{5}"
                 },
                 "signed": {
                     "id": "signed",
@@ -251,7 +276,8 @@
                 },
                 "date": {
                     "id": "date",
-                    "type": "string"
+                    "type": "string",
+                    "format": "date-time"
                 }
             },
             "additionalProperties": false
@@ -262,12 +288,8 @@
         "name",
         "election",
         "reason",
-        "more_info",
         "address",
         "delivery",
-        "change",
-        "assistance",
-        "assistant",
         "signature"
     ]
 }

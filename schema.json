@@ -1,0 +1,238 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "id": "/",
+    "type": "object",
+    "properties": {
+        "name": {
+            "id": "name",
+            "type": "object",
+            "properties": {
+                "last": {
+                    "id": "last",
+                    "type": "string"
+                },
+                "middle": {
+                    "id": "middle",
+                    "type": "string"
+                },
+                "first": {
+                    "id": "first",
+                    "type": "string"
+                },
+                "suffix": {
+                    "id": "suffix",
+                    "type": "string"
+                },
+                "ssn": {
+                    "id": "ssn",
+                    "type": "string"
+                }
+            },
+            "additionalProperties": false,
+            "required": [
+                "last",
+                "middle",
+                "first",
+                "suffix",
+                "ssn"
+            ]
+        },
+        "election": {
+            "id": "election",
+            "type": "object",
+            "properties": {
+                "type": {
+                    "id": "type",
+                    "type": "string"
+                },
+                "date": {
+                    "id": "date",
+                    "type": "string"
+                },
+                "locality": {
+                    "id": "locality",
+                    "type": "string"
+                }
+            },
+            "additionalProperties": false
+        },
+        "reason": {
+            "id": "reason",
+            "type": "object",
+            "properties": {
+                "code": {
+                    "id": "code",
+                    "type": "string"
+                },
+                "documentation": {
+                    "id": "documentation",
+                    "type": "string"
+                }
+            },
+            "additionalProperties": false
+        },
+        "more_info": {
+            "id": "more_info",
+            "type": "object",
+            "properties": {
+                "birth_year": {
+                    "id": "birth_year",
+                    "type": "string"
+                },
+                "email_fax": {
+                    "id": "email_fax",
+                    "type": "string"
+                },
+                "telephone": {
+                    "id": "telephone",
+                    "type": "string"
+                }
+            },
+            "additionalProperties": false
+        },
+        "address": {
+            "id": "address",
+            "type": "object",
+            "properties": {
+                "street": {
+                    "id": "street",
+                    "type": "string"
+                },
+                "unit": {
+                    "id": "unit",
+                    "type": "string"
+                },
+                "city": {
+                    "id": "city",
+                    "type": "string"
+                },
+                "state": {
+                    "id": "state",
+                    "type": "string"
+                },
+                "zip": {
+                    "id": "zip",
+                    "type": "string"
+                }
+            },
+            "additionalProperties": false
+        },
+        "delivery": {
+            "id": "delivery",
+            "type": "object",
+            "properties": {
+                "to": {
+                    "id": "to",
+                    "type": "string"
+                },
+                "street": {
+                    "id": "street",
+                    "type": "string"
+                },
+                "unit": {
+                    "id": "unit",
+                    "type": "string"
+                },
+                "city": {
+                    "id": "city",
+                    "type": "string"
+                },
+                "state_or_country": {
+                    "id": "state_or_country",
+                    "type": "string"
+                },
+                "zip": {
+                    "id": "zip",
+                    "type": "string"
+                }
+            },
+            "additionalProperties": false
+        },
+        "change": {
+            "id": "change",
+            "type": "object",
+            "properties": {
+                "former_name": {
+                    "id": "former_name",
+                    "type": "string"
+                },
+                "former_address": {
+                    "id": "former_address",
+                    "type": "string"
+                },
+                "date_moved": {
+                    "id": "date_moved",
+                    "type": "string"
+                }
+            },
+            "additionalProperties": false
+        },
+        "assistance": {
+            "id": "assistance",
+            "type": "boolean"
+        },
+        "assistant": {
+            "id": "assistant",
+            "type": "object",
+            "properties": {
+                "name": {
+                    "id": "name",
+                    "type": "string"
+                },
+                "street": {
+                    "id": "street",
+                    "type": "string"
+                },
+                "unit": {
+                    "id": "unit",
+                    "type": "string"
+                },
+                "city": {
+                    "id": "city",
+                    "type": "string"
+                },
+                "state": {
+                    "id": "state",
+                    "type": "string"
+                },
+                "zip": {
+                    "id": "zip",
+                    "type": "string"
+                },
+                "signed": {
+                    "id": "signed",
+                    "type": "boolean"
+                }
+            },
+            "additionalProperties": false
+        },
+        "signature": {
+            "id": "signature",
+            "type": "object",
+            "properties": {
+                "signed": {
+                    "id": "signed",
+                    "type": "boolean"
+                },
+                "date": {
+                    "id": "date",
+                    "type": "string"
+                }
+            },
+            "additionalProperties": false
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "name",
+        "election",
+        "reason",
+        "more_info",
+        "address",
+        "delivery",
+        "change",
+        "assistance",
+        "assistant",
+        "signature"
+    ]
+}

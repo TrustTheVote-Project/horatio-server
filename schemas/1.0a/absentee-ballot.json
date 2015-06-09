@@ -280,7 +280,11 @@
                     "format": "date-time"
                 }
             },
-            "additionalProperties": false
+            "additionalProperties": false,
+            "required": [
+                "signed",
+                "date"
+            ]
         }
     },
     "additionalProperties": false,

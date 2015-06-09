@@ -184,10 +184,10 @@
           "label": "I would like my ballot delivered to:",
           "input": "select",
           "options": [
-            "Residence Address (provided in Part",
+            "Residence Address (Provided in Part #5)",
             "Email (6A–6D Only)",
-            "Mail Address (Provide below)",
-            "Fax (6A–6D only) (Provide in Part"
+            "Mailing Address (Provide below)",
+            "Fax (6A–6D only) (Provide in Part #4)"
           ],
           "required": true,
           "id": "to"

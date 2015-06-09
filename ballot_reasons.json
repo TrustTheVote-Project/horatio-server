@@ -1,0 +1,97 @@
+[
+  {
+    "code": "1A",
+    "reason": "Student attending college or university outside of locality of residence in Virginia",
+    "required": "Name of college or university"
+  },
+  {
+    "code": "1B",
+    "reason": "Spouse of student attending college or university outside locality of residence in Virginia",
+    "required": "Name of college or university"
+  },
+  {
+    "code": "1C",
+    "reason": "Business outside County/City of residence on election day",
+    "required": "Name of employer or business"
+  },
+  {
+    "code": "1D",
+    "reason": "Personal business or vacation outside County/City of residence on election day",
+    "required": "Place of travel (VA county/city or state or country)"
+  },
+  {
+    "code": "1E",
+    "reason": "I am working and commuting to/from home for 11 or more hours between 6:00 AM and 7:00 PM on election day",
+    "required": "Name of employer or business and election day hours of working and commuting (AM to PM)"
+  },
+  {
+    "code": "1F",
+    "reason": "I am a first responder (member of law enforcement, fire fighter, emergency technician, search and rescue)",
+    "required": "Not required"
+  },
+  {
+    "code": "2A",
+    "reason": "My disability or illness",
+    "required": "Not required"
+  },
+  {
+    "code": "2B",
+    "reason": "I am primarily and personally responsible for the care of a disabled/ill family member confined at home",
+    "required": "Family Relationship"
+  },
+  {
+    "code": "2C",
+    "reason": "My pregnancy",
+    "required": "Not required"
+  },
+  {
+    "code": "3A",
+    "reason": "Confined, awaiting trial",
+    "required": "Name of institution"
+  },
+  {
+    "code": "3B",
+    "reason": "Confined, convicted of a misdemeanor",
+    "required": "Name of institution"
+  },
+  {
+    "code": "4A",
+    "reason": "An electoral board member, registrar, officer of election, or custodian of voting equipment",
+    "required": "Not required"
+  },
+  {
+    "code": "5A",
+    "reason": "I have a religious obligation",
+    "required": "Nature of obligation"
+  },
+  {
+    "code": "6A",
+    "reason": "Active Duty Merchant Marine or Armed Forces",
+    "required": "Branch of service"
+  },
+  {
+    "code": "6B",
+    "reason": "Spouse or dependent living with a member of 6A",
+    "required": "Branch of service"
+  },
+  {
+    "code": "6C",
+    "reason": "Temporarily residing outside of US",
+    "required": "Enter your last date of residency at your Virginia voting residence only if you have given up that address permanently or have no intent to return"
+  },
+  {
+    "code": "6D",
+    "reason": "Temporarily residing outside of US for employment or spouse or dependent residing with employee",
+    "required": "Name of business or employer"
+  },
+  {
+    "code": "7A",
+    "reason": "Requesting a ballot for presidential and vice-presidential electors only (Ballots for other offices/issues will not be sent)",
+    "required": "New state of residence and date moved from Virginia. Only eligible if you moved less than 30 days before the presidential election."
+  },
+  {
+    "code": "8A",
+    "reason": "Authorized representative of candidate or party serving inside the polling place",
+    "required": "Not required"
+  }
+]

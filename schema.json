@@ -60,7 +60,7 @@
                 "date": {
                     "id": "date",
                     "type": "string",
-                    "format": "date-time"
+                    "format": "date"
                 },
                 "locality": {
                     "id": "locality",
@@ -212,7 +212,7 @@
                 "date_moved": {
                     "id": "date_moved",
                     "type": "string",
-                    "format": "date-time"
+                    "format": "date"
                 }
             },
             "additionalProperties": false

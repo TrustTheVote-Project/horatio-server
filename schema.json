@@ -82,7 +82,7 @@
             "properties": {
                 "code": {
                     "id": "code",
-                    "enum": ["1A", "1B", "1C", "1D", "1E", "1F", "2A", "2B", "2C", "3A", "3B", "4A", "5A", "6A", "6B", "6C", "6D", "7A", "8A"],
+                    "enum": ["1A", "1B", "1C", "1D", "1E", "1F", "2A", "2B", "2C", "3A", "3B", "4A", "5A", "6A", "6B", "6C", "6D", "7A", "8A"]
                 },
                 "documentation": {
                     "id": "documentation",
@@ -101,7 +101,7 @@
                 "birth_year": {
                     "id": "birth_year",
                     "type": "string",
-                    "pattern": "[1-2]{1}[0-9]{1}[0-9]{2}"
+                    "pattern": "^[1-2]{1}[0-9]{1}[0-9]{2}$"
                 },
                 "email_fax": {
                     "id": "email_fax",
@@ -112,7 +112,7 @@
                 "telephone": {
                     "id": "telephone",
                     "type": "string",
-                    "pattern": "^(\+\d{1,2}\s)?\(?\d{3}\)?[\s.-]?\d{3}[\s.-]?\d{4}$"
+                    "pattern": "^(\\+\\d{1,2}\\s)?\\(?\\d{3}\\)?[\\s.-]?\\d{3}[\\s.-]?\\d{4}$"
                 }
             },
             "additionalProperties": false
@@ -146,7 +146,7 @@
                 "zip": {
                     "id": "zip",
                     "type": "string",
-                    "pattern": "[0-9]{5}"
+                    "pattern": "^[0-9]{5}$"
                 }
             },
             "additionalProperties": false,
@@ -252,12 +252,12 @@
                     "id": "state",
                     "type": "string",
                     "minLength": 3,
-                    "maxLength": 64,
+                    "maxLength": 64
                 },
                 "zip": {
                     "id": "zip",
                     "type": "string",
-                    "pattern": "[0-9]{5}"
+                    "pattern": "^[0-9]{5}$"
                 },
                 "signed": {
                     "id": "signed",

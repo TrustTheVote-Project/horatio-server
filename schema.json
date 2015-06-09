@@ -181,7 +181,7 @@
                 "state_or_country": {
                     "id": "state_or_country",
                     "type": "string",
-                    "minLength": 3,
+                    "minLength": 2,
                     "maxLength": 64,
                     "_comment": "There should be separate state and country fields."
                 },
@@ -251,7 +251,7 @@
                 "state": {
                     "id": "state",
                     "type": "string",
-                    "minLength": 3,
+                    "minLength": 2,
                     "maxLength": 64
                 },
                 "zip": {

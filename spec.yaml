@@ -305,7 +305,7 @@
         {
           "label": "State",
           "required": true,
-          "id": "unit",
+          "id": "state",
           "input": "text",
           "size": 2
         },

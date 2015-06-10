@@ -264,7 +264,15 @@
                     "type": "boolean"
                 }
             },
-            "additionalProperties": false
+            "additionalProperties": false,
+            "required": [
+                "name",
+                "street",
+                "city",
+                "state",
+                "zip"
+                "signed"
+            ]
         },
         "signature": {
             "id": "signature",

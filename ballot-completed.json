@@ -9,7 +9,8 @@
 	"election": {
 		"type": "Republican Primary",
 		"date": "2015-09-15",
-		"locality": "County of Fairfax"
+		"locality": "County of Fairfax",
+		"locality_gnis": "059"
 	},
 	"reason": {
 		"code": "2B",

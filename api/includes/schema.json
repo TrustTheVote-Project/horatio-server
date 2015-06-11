@@ -67,6 +67,11 @@
                     "type": "string",
                     "minLength": 10,
                     "maxLength": 64
+                },
+                "locality_gnis": {
+                    "id": "locality_gnis",
+                    "type": "string",
+                    "pattern": "^[0-9]{3}$"
                 }
             },
             "additionalProperties": false,

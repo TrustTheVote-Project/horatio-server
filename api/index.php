@@ -28,3 +28,8 @@ if ( ($method === FALSE) || !isset($router[$method]) )
 }
 
 include $router[$method] . '.php';
+/*
+ * Enable cross-origin resource sharing (CORS).
+ */
+header("Access-Control-Allow-Origin: *");
+

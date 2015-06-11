@@ -270,7 +270,7 @@
                 "street",
                 "city",
                 "state",
-                "zip"
+                "zip",
                 "signed"
             ]
         },

@@ -7,10 +7,10 @@ ini_set('display_errors', 1);
  * Establish our routing table.
  */
 $router = array();
-$router['registrars'] = 'registrars/';
-$router['validator'] = 'validator/';
-$router['submit'] = 'submit/';
-$router['bounce'] = 'bounce/';
+$router['registrars'] = 'registrars';
+$router['validator'] = 'validator';
+$router['submit'] = 'submit';
+$router['bounce'] = 'bounce';
 
 /*
  * Identify which method is being requested.

@@ -58,4 +58,4 @@ header("Access-Control-Allow-Origin: *");
 /*
  * Pass off the request to the relevant router.
  */
-include '../includes/' . $router[$method] . '.inc.php';
+include 'includes/' . $router[$method] . '.inc.php';

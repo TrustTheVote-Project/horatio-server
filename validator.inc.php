@@ -5,7 +5,7 @@
  */
 $retriever = new JsonSchema\Uri\UriRetriever;
 $schema = $retriever->retrieve('file://' . realpath('includes/schema.json'));
-$data = json_decode(file_get_contents('includes/ballot-completed.json'));
+$data = $uploaded_file;
 
 /*
  * Validate the submitted JSON against the schema.

@@ -12,17 +12,17 @@ ini_set('display_errors', 1);
 require 'vendor/autoload.php';
 
 /*
- * Establish our routing table.
+ * Establish our routing table, describing the permitted HTTP request method.
  */
 $router = array();
-$router['registrars'] = 'registrars';
-$router['validator'] = 'validator';
-$router['submit'] = 'submit';
-$router['bounce'] = 'bounce';
+$router['registrars'] = 'GET';
+$router['validator'] = 'POST';
+$router['submit'] = 'POST';
+$router['bounce'] = 'POST';
 
 /*
- * Identify which method is being requested, and whether any parameters are being passed to that
- * method.
+ * Identify which API method is being requested, and whether any parameters are being passed to
+ * that API method.
  */
 $url_components = parse_url($_SERVER['REQUEST_URI']);
 $method = str_replace('/api/', '', $url_components['path']);
@@ -58,4 +58,4 @@ header("Access-Control-Allow-Origin: *");
 /*
  * Pass off the request to the relevant router.
  */
-include 'includes/' . $router[$method] . '.inc.php';
+include 'includes/' . $method . '.inc.php';

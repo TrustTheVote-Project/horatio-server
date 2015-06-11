@@ -11,3 +11,8 @@ Fundamentally, this is a system to:
 * convert the JSON into another format and transmit it by email
 
 Which is to say that it's not very complicated.
+
+## Instructions
+
+1. Download and install onto a web server, into a directory named `api/`. 
+1. Install [JSON Schema for PHP](https://github.com/justinrainbow/json-schema).

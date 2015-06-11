@@ -38,8 +38,11 @@ if (strpos($method, '/') !== FALSE)
  */
 if ( ($method === FALSE) || !isset($router[$method]) )
 {
+
 	header("HTTP/1.0 404 Not Found");
 	echo '404 Not Found';
+	exit();
+
 }
 
 include $router[$method] . '.php';

@@ -23,7 +23,14 @@ $url_components = parse_url($_SERVER['REQUEST_URI']);
 $method = str_replace('/api/', '', $url_components['path']);
 if (strpos($method, '/') !== FALSE)
 {
-	$method = substr($url_components['path'], 1, strpos($method, '/'));
+
+	$tmp = explode('/', $method);
+	$method = $tmp[0];
+	if (!empty($tmp[1]))
+	{
+		$parameter = $tmp[1];
+	}
+
 }
 
 /*

@@ -14,3 +14,39 @@ if ($registrars === FALSE)
 
 }
 
+/*
+ * If a parameter has been passed, that's a GNIS ID, so display that record.
+ */
+if (isset($parameter))
+{
+
+	if (isset($registrars->$parameter))
+	{
+		echo json_encode($registrars->$parameter);
+	}
+
+}
+
+/*
+ * If no GNIS ID has been passed, list all of the registrars' records.
+ */
+else
+{
+
+	/*
+	 * The key is the GNIS ID for the locality. Make this an explicit element, and turn the object
+	 * into an array.
+	 */
+	$registrars_new = array();
+	$i=0;
+	foreach ($registrars as $gnis_id => $registrar)
+	{
+		$registrar->gnis_id = $gnis_id;
+		$registrars_new[$i] = $registrar;
+		$i++;
+	}
+	$registrars = $registrars_new;
+	unset($registrars_new);
+	echo json_encode($registrars);
+
+}

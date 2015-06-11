@@ -45,9 +45,12 @@ if ( ($method === FALSE) || !isset($router[$method]) )
 
 }
 
-include $router[$method] . '.php';
 /*
  * Enable cross-origin resource sharing (CORS).
  */
 header("Access-Control-Allow-Origin: *");
 
+/*
+ * Pass off the request to the relevant router.
+ */
+include '../includes/' . $router[$method] . '.inc.php';

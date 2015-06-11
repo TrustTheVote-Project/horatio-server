@@ -1,11 +1,26 @@
 <?php
 
 /*
+ * Create an empty array to encode our response.
+ */
+$response = array();
+
+if (!isset($uploaded_file))
+{
+
+    $response['valid'] = FALSE;
+    $response['errors'] = 'No file provided.';
+    echo json_encode($response);
+    exit();
+
+}
+
+/*
  * Get the schema and the submitted JSON.
  */
 $retriever = new JsonSchema\Uri\UriRetriever;
-$schema = $retriever->retrieve('file://' . realpath('../includes/schema.json');
-$data = json_decode(file_get_contents('ballot-completed.json'));
+$schema = $retriever->retrieve('file://' . realpath('includes/schema.json'));
+$data = $uploaded_file;
 
 /*
  * Validate the submitted JSON against the schema.
@@ -18,7 +33,7 @@ $validator->check($data, $schema);
  */
 if ($validator->isValid())
 {
-    echo 'valid'
+    $response['valid'] = TRUE;
 }
 
 /*
@@ -26,9 +41,28 @@ if ($validator->isValid())
  */
 else
 {
-    echo 'invalid';
+    $response['valid'] = FALSE;
+    $response['errors'] = array();
     foreach ($validator->getErrors() as $error)
     {
-        echo $error['property'] . ': ' $error['message'];
+
+    	if (empty($error['property']))
+    	{
+    		$error['property'] = 'undefined';
+    	}
+
+        $response['errors'][$error{'property'}] = $error['message'];
+
     }
 }
+
+$json = json_encode($response);
+
+if ($json === FALSE)
+{
+	$response['errors'] = TRUE;
+	$json = json_encode($response);
+}
+
+
+echo $json;

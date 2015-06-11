@@ -69,27 +69,32 @@ if ($router[$method] == 'POST')
 	 *
 	 * Read the file into memory.
 	 */
-	reset($_FILES);
-	$file = $_FILES[key($_FILES)];
-	$uploaded_file = json_decode(file_get_contents($file['tmp_name']));
-
-	/*
-	 * If the uploaded JSON file cannot be converted into an object by PHP, then display
-	 * an error.
-	 */
-	if ($uploaded_file === FALSE)
+	if (!empty($_FILES))
 	{
 
-		header("HTTP/1.0 422 Unprocessable Entity");
+		reset($_FILES);
+		$file = $_FILES[key($_FILES)];
+		$uploaded_file = json_decode(file_get_contents($file['tmp_name']));
 
-		$response = array();
-		$response['valid'] = FALSE;
-    	$response['errors'] = array();
-    	$response['errors']['invalid JSON'] = 'JSON is too broken to decode';
-		$json = json_encode($response);
-		echo $json;
-		exit();
+		/*
+		 * If the uploaded JSON file cannot be converted into an object by PHP, then display
+		 * an error.
+		 */
+		if ($uploaded_file === FALSE)
+		{
 
+			header("HTTP/1.0 422 Unprocessable Entity");
+
+			$response = array();
+			$response['valid'] = FALSE;
+	    	$response['errors'] = array();
+	    	$response['errors']['invalid JSON'] = 'JSON is too broken to decode';
+			$json = json_encode($response);
+			echo $json;
+			exit();
+
+		}
+		
 	}
 
 }

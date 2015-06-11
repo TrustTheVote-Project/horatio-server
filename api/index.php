@@ -39,7 +39,12 @@ if (strpos($method, '/') !== FALSE)
 }
 
 /*
- * If our method is invalid, fail with a 404.
+ * Enable cross-origin resource sharing (CORS).
+ */
+header("Access-Control-Allow-Origin: *");
+
+/*
+ * If our API method is invalid, fail with a 404.
  */
 if ( ($method === FALSE) || !isset($router[$method]) )
 {
@@ -51,9 +56,7 @@ if ( ($method === FALSE) || !isset($router[$method]) )
 }
 
 /*
- * Enable cross-origin resource sharing (CORS).
  */
-header("Access-Control-Allow-Origin: *");
 
 /*
  * Pass off the request to the relevant router.

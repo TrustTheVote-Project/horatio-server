@@ -4,7 +4,8 @@
  * Get the list of registrars.
  */
 die('yes');
-$registrars = json_decode('registrars.json')
+$registrars = json_decode(file_get_contents('../includes/registrars.json'));
+
 if ($registrars === FALSE)
 {
 

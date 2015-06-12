@@ -4,31 +4,43 @@
 			"coordinates": {
 				"x": 62,
 				"y": 39
-			}
+			},
+			"font_size": 1.0,
+			"kerning": 1.0,
+			"font_size": 1.0,
+			"kerning": 1.0
 		},
 		"first": {
 			"coordinates": {
 				"x": 147,
 				"y": 39
-			}
+			},
+			"font_size": 1.0,
+			"kerning": 1.0
 		},
 		"middle": {
 			"coordinates": {
 				"x": 66,
 				"y": 48
-			}
+			},
+			"font_size": 1.0,
+			"kerning": 1.0
 		},
 		"suffix": {
 			"coordinates": {
 				"x": 112,
 				"y": 48
-			}
+			},
+			"font_size": 1.0,
+			"kerning": 1.0
 		},
 		"ssn": {
 			"coordinates": {
 				"x": 187,
 				"y": 48
-			}
+			},
+			"font_size": 1.0,
+			"kerning": 1.0
 		}
 	},
 	"election": {
@@ -36,19 +48,25 @@
 			"coordinates": {
 				"x": 84,
 				"y": 56
-			}
+			},
+			"font_size": 1.0,
+			"kerning": 1.0
 		},
 		"election.date": {
 			"coordinates": {
 				"x": 73,
 				"y": 65.5
-			}
+			},
+			"font_size": 1.0,
+			"kerning": 1.0
 		},
 		"election.locality": {
 			"coordinates": {
 				"x": 147,
 				"y": 66
-			}
+			},
+			"font_size": 1.0,
+			"kerning": 1.0
 		}
 	},
 	"reason":
@@ -57,13 +75,17 @@
 			"coordinates": {
 				"x": 66,
 				"y": 86
-			}
+			},
+			"font_size": 1.0,
+			"kerning": 1.0
 		},
 		"documentation": {
 			"coordinates": {
 				"x": 108,
 				"y": 86
-			}
+			},
+			"font_size": 1.0,
+			"kerning": 1.0
 		}
 	},
 	"more_info": {
@@ -71,19 +93,25 @@
 			"coordinates": {
 				"x": 65,
 				"y": 96
-			}
+			},
+			"font_size": 1.0,
+			"kerning": 1.0
 		},
 		"telephone": {
 			"coordinates": {
 				"x": 147,
 				"y": 96
-			}
+			},
+			"font_size": 1.0,
+			"kerning": 1.0
 		},
 		"email_fax": {
 			"coordinates": {
 				"x": 62,
 				"y": 102
-			}
+			},
+			"font_size": 1.0,
+			"kerning": 1.0
 		}
 	},
 	"address":
@@ -92,25 +120,33 @@
 			"coordinates": {
 				"x": 60,
 				"y": 113
-			}
+			},
+			"font_size": 1.0,
+			"kerning": 1.0
 		},
 		"unit": {
 			"coordinates": {
 				"x": 180,
 				"y": 113
-			}
+			},
+			"font_size": 1.0,
+			"kerning": 1.0
 		},
 		"city": {
 			"coordinates": {
 				"x": 53,
 				"y": 121
-			}
+			},
+			"font_size": 1.0,
+			"kerning": 1.0
 		},
 		"zip": {
 			"coordinates": {
 				"x": 180,
 				"y": 121
-			}
+			},
+			"font_size": 1.0,
+			"kerning": 1.0
 		}
 	},
 	"delivery": {
@@ -118,37 +154,49 @@
 			"coordinates": {
 				"x": 101.7,
 				"y": 129
-			}
+			},
+			"font_size": 1.0,
+			"kerning": 1.0
 		},
 		"street": {
 			"coordinates": {
 				"x": 60,
 				"y": 141
-			}
+			},
+			"font_size": 1.0,
+			"kerning": 1.0
 		},
 		"unit": {
 			"coordinates": {
 				"x": 186,
 				"y": 141
-			}
+			},
+			"font_size": 1.0,
+			"kerning": 1.0
 		},
 		"city": {
 			"coordinates": {
 				"x": 55,
 				"y": 148
-			}
+			},
+			"font_size": 1.0,
+			"kerning": 1.0
 		},
 		"state_or_country": {
 			"coordinates": {
 				"x": 112,
 				"y": 148
-			}
+			},
+			"font_size": 1.0,
+			"kerning": 1.0
 		},
 		"zip": {
 			"coordinates": {
 				"x": 155,
 				"y": 148
-			}
+			},
+			"font_size": 1.0,
+			"kerning": 1.0
 		}
 	},
 	"change": {
@@ -156,19 +204,25 @@
 			"coordinates": {
 				"x": 72,
 				"y": 159
-			}
+			},
+			"font_size": 1.0,
+			"kerning": 1.0
 		},
 		"date_moved": {
 			"coordinates": {
 				"x": 169,
 				"y": 159
-			}
+			},
+			"font_size": 1.0,
+			"kerning": 1.0
 		},
 		"former_address": {
 			"coordinates": {
 				"x": 69,
 				"y": 165
-			}
+			},
+			"font_size": 1.0,
+			"kerning": 1.0
 		}
 	},
 	"assistance": {
@@ -182,43 +236,57 @@
 			"coordinates": {
 				"x": 61,
 				"y": 199
-			}
+			},
+			"font_size": 1.0,
+			"kerning": 1.0
 		},
 		"street": {
 			"coordinates": {
 				"x": 58,
 				"y": 206
-			}
+			},
+			"font_size": 1.0,
+			"kerning": 1.0
 		},
 		"unit": {
 			"coordinates": {
 				"x": 180,
 				"y": 206
-			}
+			},
+			"font_size": 1.0,
+			"kerning": 1.0
 		},
 		"city": {
 			"coordinates": {
 				"x": 53,
 				"y": 213
-			}
+			},
+			"font_size": 1.0,
+			"kerning": 1.0
 		},
 		"state": {
 			"coordinates": {
 				"x": 125,
 				"y": 213
-			}
+			},
+			"font_size": 1.0,
+			"kerning": 1.0
 		},
 		"zip": {
 			"coordinates": {
 				"x": 180,
 				"y": 213
-			}
+			},
+			"font_size": 1.0,
+			"kerning": 1.0
 		},
 		"signature": {
 			"coordinates": {
 				"x": 60,
 				"y": 220
-			}
+			},
+			"font_size": 1.0,
+			"kerning": 1.0
 		}
 	},
 	"signature": {
@@ -226,13 +294,17 @@
 			"coordinates": {
 				"x": 89,
 				"y": 241
-			}
+			},
+			"font_size": 1.0,
+			"kerning": 1.0
 		},
 		"signature.date": {
 			"coordinates": {
 				"x": 170,
 				"y": 241
-			}
+			},
+			"font_size": 1.0,
+			"kerning": 1.0
 		}
 	}
 }

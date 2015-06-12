@@ -163,7 +163,7 @@
             "properties": {
                 "to": {
                     "id": "to",
-                    "type": "string"
+                    "enum": ["residence address", "mailing address", "email", "fax"]
                 },
                 "street": {
                     "id": "street",

@@ -1,0 +1,238 @@
+{
+	"name": {
+		"last": {
+			"coordinates": {
+				"x": 62,
+				"y": 39
+			}
+		},
+		"first": {
+			"coordinates": {
+				"x": 147,
+				"y": 39
+			}
+		},
+		"middle": {
+			"coordinates": {
+				"x": 66,
+				"y": 48
+			}
+		},
+		"suffix": {
+			"coordinates": {
+				"x": 112,
+				"y": 48
+			}
+		},
+		"ssn": {
+			"coordinates": {
+				"x": 187,
+				"y": 48
+			}
+		}
+	},
+	"election": {
+		"type": {
+			"coordinates": {
+				"x": 84,
+				"y": 56
+			}
+		},
+		"election.date": {
+			"coordinates": {
+				"x": 73,
+				"y": 65.5
+			}
+		},
+		"election.locality": {
+			"coordinates": {
+				"x": 147,
+				"y": 66
+			}
+		}
+	},
+	"reason":
+	{
+		"code": {
+			"coordinates": {
+				"x": 66,
+				"y": 86
+			}
+		},
+		"documentation": {
+			"coordinates": {
+				"x": 108,
+				"y": 86
+			}
+		}
+	},
+	"more_info": {
+		"birth_year": {
+			"coordinates": {
+				"x": 65,
+				"y": 96
+			}
+		},
+		"telephone": {
+			"coordinates": {
+				"x": 147,
+				"y": 96
+			}
+		},
+		"email_fax": {
+			"coordinates": {
+				"x": 62,
+				"y": 102
+			}
+		}
+	},
+	"address":
+	{
+		"street": {
+			"coordinates": {
+				"x": 60,
+				"y": 113
+			}
+		},
+		"unit": {
+			"coordinates": {
+				"x": 180,
+				"y": 113
+			}
+		},
+		"city": {
+			"coordinates": {
+				"x": 53,
+				"y": 121
+			}
+		},
+		"zip": {
+			"coordinates": {
+				"x": 180,
+				"y": 121
+			}
+		}
+	},
+	"delivery": {
+		"to": {
+			"coordinates": {
+				"x": 101.7,
+				"y": 129
+			}
+		},
+		"street": {
+			"coordinates": {
+				"x": 60,
+				"y": 141
+			}
+		},
+		"unit": {
+			"coordinates": {
+				"x": 186,
+				"y": 141
+			}
+		},
+		"city": {
+			"coordinates": {
+				"x": 55,
+				"y": 148
+			}
+		},
+		"state_or_country": {
+			"coordinates": {
+				"x": 112,
+				"y": 148
+			}
+		},
+		"zip": {
+			"coordinates": {
+				"x": 155,
+				"y": 148
+			}
+		}
+	},
+	"change": {
+		"former_name": {
+			"coordinates": {
+				"x": 72,
+				"y": 159
+			}
+		},
+		"date_moved": {
+			"coordinates": {
+				"x": 169,
+				"y": 159
+			}
+		},
+		"former_address": {
+			"coordinates": {
+				"x": 69,
+				"y": 165
+			}
+		}
+	},
+	"assistance": {
+		"coordinates": {
+			"x": 47,
+			"y": 175
+		}
+	},
+	"assistant": {
+		"name": {
+			"coordinates": {
+				"x": 61,
+				"y": 199
+			}
+		},
+		"street": {
+			"coordinates": {
+				"x": 58,
+				"y": 206
+			}
+		},
+		"unit": {
+			"coordinates": {
+				"x": 180,
+				"y": 206
+			}
+		},
+		"city": {
+			"coordinates": {
+				"x": 53,
+				"y": 213
+			}
+		},
+		"state": {
+			"coordinates": {
+				"x": 125,
+				"y": 213
+			}
+		},
+		"zip": {
+			"coordinates": {
+				"x": 180,
+				"y": 213
+			}
+		},
+		"signature": {
+			"coordinates": {
+				"x": 60,
+				"y": 220
+			}
+		}
+	},
+	"signature": {
+		"signature.signed": {
+			"coordinates": {
+				"x": 89,
+				"y": 241
+			}
+		},
+		"signature.date": {
+			"coordinates": {
+				"x": 170,
+				"y": 241
+			}
+		}
+	}
+}

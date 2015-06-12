@@ -29,7 +29,7 @@
 		"zip": "22030"
 	},
 	"delivery": {
-		"to": "Mailing Address",
+		"to": "mailing address",
 		"street": "2037 Philli Lane",
 		"unit": "103",
 		"city": "Fairfax",

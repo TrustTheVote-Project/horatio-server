@@ -67,6 +67,11 @@
                     "type": "string",
                     "minLength": 10,
                     "maxLength": 64
+                },
+                "locality_gnis": {
+                    "id": "locality_gnis",
+                    "type": "string",
+                    "pattern": "^[0-9]{3}$"
                 }
             },
             "additionalProperties": false,
@@ -158,7 +163,7 @@
             "properties": {
                 "to": {
                     "id": "to",
-                    "type": "string"
+                    "enum": ["residence address", "mailing address", "email", "fax"]
                 },
                 "street": {
                     "id": "street",
@@ -182,8 +187,7 @@
                     "id": "state_or_country",
                     "type": "string",
                     "minLength": 2,
-                    "maxLength": 64,
-                    "_comment": "There should be separate state and country fields."
+                    "maxLength": 64
                 },
                 "zip": {
                     "id": "zip",
@@ -264,7 +268,15 @@
                     "type": "boolean"
                 }
             },
-            "additionalProperties": false
+            "additionalProperties": false,
+            "required": [
+                "name",
+                "street",
+                "city",
+                "state",
+                "zip",
+                "signed"
+            ]
         },
         "signature": {
             "id": "signature",

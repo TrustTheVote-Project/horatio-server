@@ -32,15 +32,10 @@ $registrars = json_decode(file_get_contents('includes/registrars.json'));
 $send_to = $registrars->$gnis_id->email;
 
 /*
- * Save this application.
+ * Save this application as a PDF.
  */
-$dir = 'applications/';
-$filename = substr(md5(json_encode($ab)), 0, 7);
-$result = file_put_contents($dir . $filename, json_encode($ab));
-if ($result === FALSE)
-{
-	$response['errors'] = TRUE;
-}
+$values = $ab;
+require('includes/pdf_generation.inc.php');
 
 /*
  * Send a response to the browser.

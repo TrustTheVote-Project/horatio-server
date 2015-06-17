@@ -25,6 +25,11 @@ $ab = $uploaded_file;
 unset($uploaded_file);
 
 /*
+ * Generate a unique ID for this ballot. A 32-digit hash is excessive, so we just use the first 10
+ * digits.
+ */
+$ab_id = substr(md5(json_encode($ab)), 0, 10);
+
  * Identify the registrar to whom this application should be sent.
  */
 $gnis_id = $ab->election->locality_gnis;
@@ -38,6 +43,7 @@ $values = $ab;
 require('includes/pdf_generation.inc.php');
 
 /*
+$response['id'] = $ab_id;
  * Send a response to the browser.
  */
 $json = json_encode($response);

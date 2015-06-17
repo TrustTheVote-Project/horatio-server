@@ -16,3 +16,4 @@ Which is to say that it's not very complicated.
 
 1. Download and install onto a web server, into a directory named `api/`. 
 1. Install [JSON Schema for PHP](https://github.com/justinrainbow/json-schema).
+1. Set up an account with [Mailgun](https://mailgun.com/) (no credit card number required; <10,000 emails/month is free), following their instructions to get SPF records added to DNS for the domain.

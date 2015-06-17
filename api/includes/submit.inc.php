@@ -44,6 +44,7 @@ require('includes/pdf_generation.inc.php');
 
 /*
 $response['id'] = $ab_id;
+$response['pdf_url'] = SITE_URL . 'applications/' . $ab_id; . '.pdf';
  * Send a response to the browser.
  */
 $json = json_encode($response);

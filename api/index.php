@@ -3,8 +3,11 @@
 /*
  * Show debug code.
  */
-error_reporting(E_ALL);
-ini_set('display_errors', 1);
+if (DEBUG_MODE === TRUE)
+	error_reporting(E_ALL);
+	ini_set('display_errors', 1);
+}
+
 
 /*
  * Load Composer requirements.

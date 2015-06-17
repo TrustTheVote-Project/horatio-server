@@ -43,6 +43,12 @@ $values = $ab;
 require('includes/pdf_generation.inc.php');
 
 /*
+ * Email the PDF 
+ */
+if ( (DEBUG_MODE === FALSE)
+{
+	// email PDF
+}
 $response['id'] = $ab_id;
 $response['pdf_url'] = SITE_URL . 'applications/' . $ab_id; . '.pdf';
  * Send a response to the browser.

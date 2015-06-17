@@ -8,6 +8,21 @@ if (DEBUG_MODE === TRUE)
 	ini_set('display_errors', 1);
 }
 
+/*
+ * Refuse non-secured connections, unless the server is in debug mode.
+ */
+if ( (DEBUG_MODE === FALSE) && empty($_SERVER['HTTPS']) )
+{
+
+	header('HTTP/1.1 400 Bad Request');
+	$response = array();
+	$response['valid'] = FALSE;
+	$response['errors'] = array();
+	$response['errors']['invalid protocol'] = 'request must be submitted via HTTPS';
+	$json = json_encode($response);
+	echo $json;
+	exit();
+}
 
 /*
  * Load Composer requirements.

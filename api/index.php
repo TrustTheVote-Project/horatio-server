@@ -9,6 +9,11 @@ if (DEBUG_MODE === TRUE)
 }
 
 /*
+ * Include the site settings.
+ */
+require 'includes/settings.inc.php';
+
+/*
  * Refuse non-secured connections, unless the server is in debug mode.
  */
 if ( (DEBUG_MODE === FALSE) && empty($_SERVER['HTTPS']) )

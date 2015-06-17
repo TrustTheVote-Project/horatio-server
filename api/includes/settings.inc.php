@@ -1,6 +1,13 @@
 <?php
 
 /*
+ * Whether the server is in debug mode. If it is in debug mode, HTTPS is not required, and PDFs
+ * will not be delivered to registrars. If it is not in debug mode, HTTPS is strictly enforced for
+ * all requests, and PDFs will be delievered.
+ */
+define('DEBUG_MODE', TRUE);
+
+/*
  * Your unique API key, provided by Mailgun <https://mailgun.com/>. This is required to send
  * absentee ballot request PDFs to local registrars.
  */

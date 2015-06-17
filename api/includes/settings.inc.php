@@ -4,7 +4,7 @@
  * Your unique API key, provided by Mailgun <https://mailgun.com/>. This is required to send
  * absentee ballot request PDFs to local registrars.
  */
-MAILGUN_API_KEY = '';
+define('MAILGUN_API_KEY', '');
 
 /*
  * The API key that your own server requires for API requests to the "bounce" method. This is
@@ -15,4 +15,4 @@ MAILGUN_API_KEY = '';
  * can be set to any password-like value that you like. It is recommended that you use a
  * 32-character string of letters, numbers, and punctuation.
  */
-BOUNCE_API_KEY = '';
+define('BOUNCE_API_KEY', '');

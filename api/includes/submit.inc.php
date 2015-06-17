@@ -30,6 +30,7 @@ unset($uploaded_file);
  */
 $ab_id = substr(md5(json_encode($ab)), 0, 10);
 
+/*
  * Identify the registrar to whom this application should be sent.
  */
 $gnis_id = $ab->election->locality_gnis;
@@ -49,8 +50,15 @@ if ( (DEBUG_MODE === FALSE)
 {
 	// email PDF
 }
+
+/*
+ * Inform the client of the success.
+ */
+$response['valid'] = TRUE;
 $response['id'] = $ab_id;
 $response['pdf_url'] = SITE_URL . 'applications/' . $ab_id; . '.pdf';
+
+/*
  * Send a response to the browser.
  */
 $json = json_encode($response);

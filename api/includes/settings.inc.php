@@ -23,3 +23,8 @@ define('MAILGUN_API_KEY', '');
  * 32-character string of letters, numbers, and punctuation.
  */
 define('BOUNCE_API_KEY', '');
+
+/*
+ * The base URL for the site, e.g., https://example.com/, or https://example.com/ballot/.
+ */
+define('SITE_URL', '');

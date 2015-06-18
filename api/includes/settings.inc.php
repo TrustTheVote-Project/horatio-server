@@ -8,10 +8,12 @@
 define('DEBUG_MODE', TRUE);
 
 /*
- * Your unique API key, provided by Mailgun <https://mailgun.com/>. This is required to send
- * absentee ballot request PDFs to local registrars.
+ * Your Mailgun <https://mailgun.com/> credentials, required to send absentee ballot request PDFs
+ * to local registrars.. This is your unique API key and the email domain that you've set up with
+ * them.
  */
 define('MAILGUN_API_KEY', '');
+define('MAILGUN_DOMAIN', '');
 
 /*
  * The API key that your own server requires for API requests to the "bounce" method. This is

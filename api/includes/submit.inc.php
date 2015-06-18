@@ -35,7 +35,7 @@ $ab_id = substr(md5(json_encode($ab)), 0, 10);
  */
 $gnis_id = $ab->election->locality_gnis;
 $registrars = json_decode(file_get_contents('includes/registrars.json'));
-$send_to = $registrars->$gnis_id->email;
+$registrar_email = $registrars->$gnis_id->email;
 
 /*
  * Save this application as a PDF.
@@ -44,12 +44,30 @@ $values = $ab;
 require('includes/pdf_generation.inc.php');
 
 /*
- * Email the PDF 
+ * Send the PDF to the site operator if the site is in debug mode.
  */
 if ( (DEBUG_MODE === FALSE)
 {
-	// email PDF
+	$registrar_email = SITE_EMAIL;
 }
+
+use Mailgun\Mailgun;
+$mg = new Mailgun(MAILGUN_API_KEY);
+$domain = MAILGUN_DOMAIN;
+
+/*
+ * Assemble and send the message.
+ */
+$mg->sendMessage($domain, array('from'    => SITE_EMAIL, 
+                                'to'      => $registrars->$gnis_id->email, 
+                                'subject' => 'Absentee Ballot Request', 
+                                'text'    => 'Please find attached an absentee ballot request.'),
+								array(array('filePath'		=> 'applications/' . $ab_id; . '.pdf',
+											'remoteName'	=> 'ab-' . $ab_id)));
+
+/*
+ * TO DO: Make sure everything went OK.
+ */
 
 /*
  * Inform the client of the success.

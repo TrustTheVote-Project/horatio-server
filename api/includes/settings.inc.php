@@ -3,7 +3,7 @@
 /*
  * Whether the server is in debug mode. If it is in debug mode, HTTPS is not required, and PDFs
  * will not be delivered to registrars. If it is not in debug mode, HTTPS is strictly enforced for
- * all requests, and PDFs will be delievered.
+ * all requests, and PDFs will be emailed to the site operator instead of the relevant registrar.
  */
 define('DEBUG_MODE', TRUE);
 
@@ -32,12 +32,13 @@ define('BOUNCE_API_KEY', '');
 define('SITE_URL', '');
 
 /*
- * The site owner and email address are required when sending absentee ballot request PDFs to
+  * The site owner and email address are required when sending absentee ballot request PDFs to
  * registrars. They need to know where the requests are coming from, and who to contact if
  * something is wrong with the requests. The site owner could be a person's name or it could
  * be an organization's name. It will appear as the "From" field in the email, and SITE_EMAIL
  * will be the email address that the email is sent from. This email address MUST work. Do
- * not use an address like do_not_reply@example.com.
+ * not use an address like do_not_reply@example.com. When the site is in debug mode, all
+ * absentee ballots requests will be emailed to SITE_EMAIL.
  */
 define('SITE_OWNER', '');
 define('SITE_EMAIL', '');

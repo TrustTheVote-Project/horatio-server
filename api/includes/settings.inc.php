@@ -28,3 +28,14 @@ define('BOUNCE_API_KEY', '');
  * The base URL for the site, e.g., https://example.com/, or https://example.com/ballot/.
  */
 define('SITE_URL', '');
+
+/*
+ * The site owner and email address are required when sending absentee ballot request PDFs to
+ * registrars. They need to know where the requests are coming from, and who to contact if
+ * something is wrong with the requests. The site owner could be a person's name or it could
+ * be an organization's name. It will appear as the "From" field in the email, and SITE_EMAIL
+ * will be the email address that the email is sent from. This email address MUST work. Do
+ * not use an address like do_not_reply@example.com.
+ */
+define('SITE_OWNER', '');
+define('SITE_EMAIL', '');

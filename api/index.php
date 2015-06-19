@@ -36,6 +36,15 @@ if ( (DEBUG_MODE === FALSE) && empty($_SERVER['HTTPS']) )
 require 'vendor/autoload.php';
 
 /*
+ * Set up our own autoloader.
+ */
+function my_autoloader($class)
+{
+    require 'includes/class.' . $class . '.inc.php';
+}
+spl_autoload_register('my_autoloader');
+
+/*
  * Establish our routing table, describing the permitted HTTP request method.
  */
 $router = array();

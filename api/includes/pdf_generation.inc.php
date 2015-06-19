@@ -51,7 +51,10 @@ foreach ($form as $section_name => $section)
 			}
 			elseif ( ($section_name == 'change') && ($field_name == 'date_moved') )
 			{
-				$value = date('m d y', strtotime($value));
+				if ( isset($value) && !empty($value) )
+				{
+					$value = date('m d y', strtotime($value));
+				}
 			}
 			elseif ( ($section_name == 'election') && ($field_name == 'date') )
 			{

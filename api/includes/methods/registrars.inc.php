@@ -3,7 +3,7 @@
 /*
  * Get the list of registrars.
  */
-$registrars = json_decode(file_get_contents('../includes/registrars.json'));
+$registrars = json_decode(file_get_contents('includes/registrars.json'));
 
 if ($registrars === FALSE)
 {

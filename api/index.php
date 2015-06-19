@@ -135,4 +135,4 @@ if ($router[$method] == 'POST')
 /*
  * Pass off the request to the relevant router.
  */
-include 'includes/' . $method . '.inc.php';
+include 'includes/methods/' . $method . '.inc.php';

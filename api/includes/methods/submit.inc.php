@@ -135,6 +135,20 @@ if ($result->http_response_code != '200')
 }
 
 /*
+ * Store a copy of the application's data, appending the Mailgun message ID and the identified
+ * registrar.
+ */
+$tmp = $ab;
+unset($ab);
+$ab = new stdClass();
+$ab->request = new stdClass();
+$ab->request = $tmp;
+unset($tmp);
+$ab->message_id = $result->http_response_body->items[0]->message_id;
+$ab->registrar = $registrars->$gnis_id;
+file_put_contents('applications/' . $ab_id . '.json', json_encode($ab));
+
+/*
  * Inform the client of the success.
  */
 $response['valid'] = TRUE;

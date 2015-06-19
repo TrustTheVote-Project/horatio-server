@@ -128,11 +128,11 @@ foreach ($form as $section_name => $section)
 			 */
 			$style_attributes = array();
 			$style_attributes[] = 'letter-spacing: ' . $field->letter_spacing . 'px;';
-			$style_attributes[] = 'word-spacing: ' . $field->word_spacing . 'em;';
+			$style_attributes[] = 'word-spacing: ' . $field->word_spacing . 'px;';
 			$style_attributes[] = 'font-size: ' . $field->font_size . 'em;';
 			$value = '<span style="' . implode(' ', $style_attributes) . '">'
 					. $value . '</span>';
-			
+
 			// All Y coordinates are offset by 4mm when writing HTML instead of plain text.
 			$field->coordinates->y = $field->coordinates->y - 4;
 			$mpdf->WriteFixedPosHTML($value, $field->coordinates->x, $field->coordinates->y, 100, 100);

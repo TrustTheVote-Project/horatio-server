@@ -38,11 +38,11 @@
 		},
 		"ssn": {
 			"coordinates": {
-				"x": 187,
+				"x": 188,
 				"y": 48
 			},
 			"font_size": 1.0,
-			"letter_spacing": 1.0,
+			"letter_spacing": 12,
 			"word_spacing": 0
 		}
 	},
@@ -56,16 +56,16 @@
 			"letter_spacing": 1.0,
 			"word_spacing": 0
 		},
-		"election.date": {
+		"date": {
 			"coordinates": {
 				"x": 73,
 				"y": 65.5
 			},
 			"font_size": 1.0,
-			"letter_spacing": 1.0,
-			"word_spacing": 0
+			"letter_spacing": 12,
+			"word_spacing": -13
 		},
-		"election.locality": {
+		"locality": {
 			"coordinates": {
 				"x": 147,
 				"y": 66
@@ -79,11 +79,11 @@
 	{
 		"code": {
 			"coordinates": {
-				"x": 66,
-				"y": 86
+				"x": 68,
+				"y": 85
 			},
-			"font_size": 1.0,
-			"letter_spacing": 1.0,
+			"font_size": 1.2,
+			"letter_spacing": 17,
 			"word_spacing": 0
 		},
 		"documentation": {
@@ -99,21 +99,21 @@
 	"more_info": {
 		"birth_year": {
 			"coordinates": {
-				"x": 65,
+				"x": 67,
 				"y": 96
 			},
 			"font_size": 1.0,
-			"letter_spacing": 1.0,
+			"letter_spacing": 13,
 			"word_spacing": 0
 		},
 		"telephone": {
 			"coordinates": {
-				"x": 147,
+				"x": 149,
 				"y": 96
 			},
 			"font_size": 1.0,
-			"letter_spacing": 1.0,
-			"word_spacing": 0
+			"letter_spacing": 12,
+			"word_spacing": -15
 		},
 		"email_fax": {
 			"coordinates": {
@@ -160,8 +160,8 @@
 				"y": 121
 			},
 			"font_size": 1.0,
-			"letter_spacing": 1.0,
-			"word_spacing": 0
+			"letter_spacing": 14,
+			"word_spacing": 20
 		}
 	},
 	"delivery": {
@@ -216,8 +216,8 @@
 				"y": 148
 			},
 			"font_size": 1.0,
-			"letter_spacing": 1.0,
-			"word_spacing": 0
+			"letter_spacing": 13,
+			"word_spacing": -12
 		}
 	},
 	"change": {
@@ -232,12 +232,12 @@
 		},
 		"date_moved": {
 			"coordinates": {
-				"x": 169,
+				"x": 170,
 				"y": 159
 			},
 			"font_size": 1.0,
-			"letter_spacing": 1.0,
-			"word_spacing": 0
+			"letter_spacing": 12,
+			"word_spacing": -15
 		},
 		"former_address": {
 			"coordinates": {
@@ -251,8 +251,8 @@
 	},
 	"assistance": {
 		"coordinates": {
-			"x": 47,
-			"y": 175
+			"x": 47.5,
+			"y": 175.75
 		}
 	},
 	"assistant": {
@@ -294,11 +294,11 @@
 		},
 		"state": {
 			"coordinates": {
-				"x": 125,
+				"x": 128,
 				"y": 213
 			},
 			"font_size": 1.0,
-			"letter_spacing": 1.0,
+			"letter_spacing": 0,
 			"word_spacing": 0
 		},
 		"zip": {
@@ -307,7 +307,7 @@
 				"y": 213
 			},
 			"font_size": 1.0,
-			"letter_spacing": 1.0,
+			"letter_spacing": 14,
 			"word_spacing": 0
 		},
 		"signature": {
@@ -321,7 +321,7 @@
 		}
 	},
 	"signature": {
-		"signature.signed": {
+		"signed": {
 			"coordinates": {
 				"x": 89,
 				"y": 241
@@ -330,14 +330,14 @@
 			"letter_spacing": 1.0,
 			"word_spacing": 0
 		},
-		"signature.date": {
+		"date": {
 			"coordinates": {
-				"x": 170,
+				"x": 171,
 				"y": 241
 			},
 			"font_size": 1.0,
-			"letter_spacing": 1.0,
-			"word_spacing": 0
+			"letter_spacing": 12,
+			"word_spacing": -15
 		}
 	}
 }

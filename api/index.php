@@ -1,17 +1,18 @@
 <?php
 
 /*
- * Show debug code.
- */
-if (DEBUG_MODE === TRUE)
-	error_reporting(E_ALL);
-	ini_set('display_errors', 1);
-}
-
-/*
  * Include the site settings.
  */
 require 'includes/settings.inc.php';
+
+/*
+ * Show PHP errors when debug mode is enabled.
+ */
+if (DEBUG_MODE === TRUE)
+{
+	error_reporting(E_ALL);
+	ini_set('display_errors', 1);
+}
 
 /*
  * Refuse non-secured connections, unless the server is in debug mode.

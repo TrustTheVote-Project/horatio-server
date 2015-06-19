@@ -156,9 +156,7 @@ foreach ($form as $section_name => $section)
 }
 
 /*
- * Save the file to the applications directory.
+ * Save the file to the applications directory, using its ID.
  */
 $dir = 'applications/';
-$mpdf->Output($dir . 'completed.pdf', 'F');
-//$mpdf->Output();
-
+$mpdf->Output($dir . $ab_id . '.pdf', 'F');

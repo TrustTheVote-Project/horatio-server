@@ -71,6 +71,11 @@ foreach ($form as $section_name => $section)
 
 			}
 
+			elseif ( ($section_name == 'more_info') && ($field_name == 'telephone') )
+			{
+				$value = str_replace('-', ' ', $value);
+			}
+
 			elseif ( ($section_name == 'delivery') && ($field_name == 'to') )
 			{
 
@@ -99,6 +104,10 @@ foreach ($form as $section_name => $section)
 				$field->coordinates->y = $y;
 				$value = 'x';
 				
+			}
+			elseif ( ($section_name == 'delivery') && ($field_name == 'zip') )
+			{
+				$value = str_replace('-', ' ', $value);
 			}
 			elseif ( ($section_name == 'signature') && ($field_name == 'signed') )
 			{

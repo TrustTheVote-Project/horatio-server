@@ -75,7 +75,7 @@ $mg->sendMessage(MAILGUN_DOMAIN, array('from'    => SITE_EMAIL,
  * If there was an error in the process of sending the message, report that to the client.
  */
 $result = $mg->get(MAILGUN_DOMAIN . '/log', array('limit' => 1));
-if ($result->http_response_code) != '200')
+if ($result->http_response_code != '200')
 {
 
 	$response['valid'] = TRUE;

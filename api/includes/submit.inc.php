@@ -25,6 +25,40 @@ $ab = $uploaded_file;
 unset($uploaded_file);
 
 /*
+ * Validate the submitted JSON.
+ */
+$retriever = new JsonSchema\Uri\UriRetriever;
+$schema = $retriever->retrieve('file://' . realpath('includes/schema.json'));
+$validator = new JsonSchema\Validator();
+$validator->check($ab, $schema);
+
+/*
+ * If the JSON is not valid, return an error and halt.
+ */
+if ($validator->isValid() === FALSE)
+{
+
+    $response['valid'] = FALSE;
+    $response['errors'] = array();
+    foreach ($validator->getErrors() as $error)
+    {
+
+    	if (empty($error['property']))
+    	{
+    		$error['property'] = 'undefined';
+    	}
+
+        $response['errors'][$error{'property'}] = $error['message'];
+
+    }
+
+	$json = json_encode($response);
+	echo $json;
+	exit();
+
+}
+
+/*
  * Generate a unique ID for this ballot. A 32-digit hash is excessive, so we just use the first 10
  * digits.
  */

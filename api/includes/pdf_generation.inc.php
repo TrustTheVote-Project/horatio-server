@@ -138,12 +138,19 @@ foreach ($form as $section_name => $section)
 			$mpdf->WriteFixedPosHTML($value, $field->coordinates->x, $field->coordinates->y, 100, 100);
 
 		}
-
 	}
 	else
 	{
+		
 		$value = utf8_encode($values->$section_name);
+
+		if ($section_name == 'assistance')
+		{
+			if ($value == TRUE) $value ='x';
+			else $value = '';
+		}
 		$mpdf->WriteText($section->coordinates->x, $section->coordinates->y, $value);
+
 	}
 
 }

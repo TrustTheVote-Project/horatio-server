@@ -5,7 +5,7 @@ include("includes/mpdf60/mpdf.php");
 /*
  * Create a new instance of mPDF, using an 11-point font.
  */
-$mpdf=new mPDF('', '', 11); 
+$mpdf = new mPDF('', '', 11); 
 
 /*
  * Enable the use of imported PDFs.
@@ -122,7 +122,20 @@ foreach ($form as $section_name => $section)
 
 			}
 
-			$mpdf->WriteText($field->coordinates->x, $field->coordinates->y, $value);
+			/*
+			 * If this field uses non-standard spacing or font sizes, add the style tags to
+			 * make those changes.
+			 */
+			$style_attributes = array();
+			$style_attributes[] = 'letter-spacing: ' . $field->letter_spacing . 'px;';
+			$style_attributes[] = 'word-spacing: ' . $field->word_spacing . 'em;';
+			$style_attributes[] = 'font-size: ' . $field->font_size . 'em;';
+			$value = '<span style="' . implode(' ', $style_attributes) . '">'
+					. $value . '</span>';
+			
+			// All Y coordinates are offset by 4mm when writing HTML instead of plain text.
+			$field->coordinates->y = $field->coordinates->y - 4;
+			$mpdf->WriteFixedPosHTML($value, $field->coordinates->x, $field->coordinates->y, 100, 100);
 
 		}
 

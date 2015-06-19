@@ -105,7 +105,6 @@ if ($result->http_response_code) != '200')
  */
 $response['valid'] = TRUE;
 $response['id'] = $ab_id;
-$response['pdf_url'] = SITE_URL . 'applications/' . $ab_id; . '.pdf';
 $response['pdf_url'] = SITE_URL . 'applications/' . $ab_id . '.pdf';
 $response['registrar'] = (array) $registrars->$gnis_id;
 

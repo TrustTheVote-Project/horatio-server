@@ -51,7 +51,7 @@ $router = array();
 $router['registrars'] = 'GET';
 $router['validator'] = 'POST';
 $router['submit'] = 'POST';
-$router['bounce'] = 'POST';
+$router['bounce'] = 'GET';
 
 /*
  * Identify which API method is being requested, and whether any parameters are being passed to

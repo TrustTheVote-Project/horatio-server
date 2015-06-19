@@ -46,7 +46,7 @@ require('includes/pdf_generation.inc.php');
 /*
  * Send the PDF to the site operator if the site is in debug mode.
  */
-if ( (DEBUG_MODE === FALSE)
+if (DEBUG_MODE === TRUE)
 {
 	$registrar_email = SITE_EMAIL;
 }
@@ -59,7 +59,7 @@ $domain = MAILGUN_DOMAIN;
  * Assemble and send the message.
  */
 $mg->sendMessage($domain, array('from'    => SITE_EMAIL, 
-                                'to'      => $registrars->$gnis_id->email, 
+                                'to'      => $registrar_email,
                                 'subject' => 'Absentee Ballot Request', 
                                 'text'    => 'Please find attached an absentee ballot request.'),
 								array(array('filePath'		=> 'applications/' . $ab_id; . '.pdf',

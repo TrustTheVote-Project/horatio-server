@@ -53,17 +53,23 @@ if (DEBUG_MODE === TRUE)
 
 use Mailgun\Mailgun;
 $mg = new Mailgun(MAILGUN_API_KEY);
-$domain = MAILGUN_DOMAIN;
 
 /*
  * Assemble and send the message.
  */
-$mg->sendMessage($domain, array('from'    => SITE_EMAIL, 
+$mg->sendMessage(MAILGUN_DOMAIN, array('from'    => SITE_EMAIL, 
                                 'to'      => $registrar_email,
                                 'subject' => 'Absentee Ballot Request', 
                                 'text'    => 'Please find attached an absentee ballot request.'),
-								array(array('filePath'		=> 'applications/' . $ab_id; . '.pdf',
-											'remoteName'	=> 'ab-' . $ab_id)));
+								array('attachment' =>
+									array(
+										array(
+											'filePath'		=> '/vol/jaquith.org/htdocs/api/applications/' . $ab_id . '.pdf',
+											'remoteName'	=> 'ab-' . $ab_id
+										)
+									)
+								)
+							);
 
 /*
  * If there was an error in the process of sending the message, report that to the client.
@@ -100,6 +106,8 @@ if ($result->http_response_code) != '200')
 $response['valid'] = TRUE;
 $response['id'] = $ab_id;
 $response['pdf_url'] = SITE_URL . 'applications/' . $ab_id; . '.pdf';
+$response['pdf_url'] = SITE_URL . 'applications/' . $ab_id . '.pdf';
+$response['registrar'] = (array) $registrars->$gnis_id;
 
 /*
  * Send a response to the browser.

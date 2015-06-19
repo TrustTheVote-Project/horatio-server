@@ -66,8 +66,33 @@ $mg->sendMessage($domain, array('from'    => SITE_EMAIL,
 											'remoteName'	=> 'ab-' . $ab_id)));
 
 /*
- * TO DO: Make sure everything went OK.
+ * If there was an error in the process of sending the message, report that to the client.
  */
+$result = $mg->get(MAILGUN_DOMAIN . '/log', array('limit' => 1));
+if ($result->http_response_code) != '200')
+{
+
+	$response['valid'] = TRUE;
+	$response['success'] = FALSE;
+    $response['errors'] = 'Could not send email. ' . $result->http_response_body->items[0]->message;
+    echo json_encode($response);
+
+    /*
+     * Also, send a note to the site operator.
+     */
+	$mg->sendMessage(MAILGUN_DOMAIN, array('from'    => SITE_EMAIL, 
+			                                'to'      => SITE_EMAIL,
+			                                'subject' => 'Absentee Ballot Request Failed', 
+			                                'text'    => 'A submitted absentee ballot request on '
+			                                	. SITE_URL . ' just failed to be sent via email,
+			                                	and requires manual intervention. See ' . $ab_id
+			                                	. 'at ' . SITE_URL . 'applications/' . $ab_id .
+			                                	'.pdf')
+										);
+    
+    exit();
+
+}
 
 /*
  * Inform the client of the success.

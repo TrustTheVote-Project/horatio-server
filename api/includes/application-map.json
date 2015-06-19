@@ -6,7 +6,8 @@
 				"y": 39
 			},
 			"font_size": 1.0,
-			"letter_spacing": 1.0
+			"letter_spacing": 1.0,
+			"word_spacing": 0
 		},
 		"first": {
 			"coordinates": {
@@ -14,7 +15,8 @@
 				"y": 39
 			},
 			"font_size": 1.0,
-			"letter_spacing": 1.0
+			"letter_spacing": 1.0,
+			"word_spacing": 0
 		},
 		"middle": {
 			"coordinates": {
@@ -22,7 +24,8 @@
 				"y": 48
 			},
 			"font_size": 1.0,
-			"letter_spacing": 1.0
+			"letter_spacing": 1.0,
+			"word_spacing": 0
 		},
 		"suffix": {
 			"coordinates": {
@@ -30,7 +33,8 @@
 				"y": 48
 			},
 			"font_size": 1.0,
-			"letter_spacing": 1.0
+			"letter_spacing": 1.0,
+			"word_spacing": 0
 		},
 		"ssn": {
 			"coordinates": {
@@ -38,7 +42,8 @@
 				"y": 48
 			},
 			"font_size": 1.0,
-			"letter_spacing": 1.0
+			"letter_spacing": 1.0,
+			"word_spacing": 0
 		}
 	},
 	"election": {
@@ -48,7 +53,8 @@
 				"y": 56
 			},
 			"font_size": 1.0,
-			"letter_spacing": 1.0
+			"letter_spacing": 1.0,
+			"word_spacing": 0
 		},
 		"election.date": {
 			"coordinates": {
@@ -56,7 +62,8 @@
 				"y": 65.5
 			},
 			"font_size": 1.0,
-			"letter_spacing": 1.0
+			"letter_spacing": 1.0,
+			"word_spacing": 0
 		},
 		"election.locality": {
 			"coordinates": {
@@ -64,7 +71,8 @@
 				"y": 66
 			},
 			"font_size": 1.0,
-			"letter_spacing": 1.0
+			"letter_spacing": 1.0,
+			"word_spacing": 0
 		}
 	},
 	"reason":
@@ -75,7 +83,8 @@
 				"y": 86
 			},
 			"font_size": 1.0,
-			"letter_spacing": 1.0
+			"letter_spacing": 1.0,
+			"word_spacing": 0
 		},
 		"documentation": {
 			"coordinates": {
@@ -83,7 +92,8 @@
 				"y": 86
 			},
 			"font_size": 1.0,
-			"letter_spacing": 1.0
+			"letter_spacing": 1.0,
+			"word_spacing": 0
 		}
 	},
 	"more_info": {
@@ -93,7 +103,8 @@
 				"y": 96
 			},
 			"font_size": 1.0,
-			"letter_spacing": 1.0
+			"letter_spacing": 1.0,
+			"word_spacing": 0
 		},
 		"telephone": {
 			"coordinates": {
@@ -101,7 +112,8 @@
 				"y": 96
 			},
 			"font_size": 1.0,
-			"letter_spacing": 1.0
+			"letter_spacing": 1.0,
+			"word_spacing": 0
 		},
 		"email_fax": {
 			"coordinates": {
@@ -109,7 +121,8 @@
 				"y": 102
 			},
 			"font_size": 1.0,
-			"letter_spacing": 1.0
+			"letter_spacing": 1.0,
+			"word_spacing": 0
 		}
 	},
 	"address":
@@ -120,7 +133,8 @@
 				"y": 113
 			},
 			"font_size": 1.0,
-			"letter_spacing": 1.0
+			"letter_spacing": 1.0,
+			"word_spacing": 0
 		},
 		"unit": {
 			"coordinates": {
@@ -128,7 +142,8 @@
 				"y": 113
 			},
 			"font_size": 1.0,
-			"letter_spacing": 1.0
+			"letter_spacing": 1.0,
+			"word_spacing": 0
 		},
 		"city": {
 			"coordinates": {
@@ -136,7 +151,8 @@
 				"y": 121
 			},
 			"font_size": 1.0,
-			"letter_spacing": 1.0
+			"letter_spacing": 1.0,
+			"word_spacing": 0
 		},
 		"zip": {
 			"coordinates": {
@@ -144,7 +160,8 @@
 				"y": 121
 			},
 			"font_size": 1.0,
-			"letter_spacing": 1.0
+			"letter_spacing": 1.0,
+			"word_spacing": 0
 		}
 	},
 	"delivery": {
@@ -154,7 +171,8 @@
 				"y": 129
 			},
 			"font_size": 1.0,
-			"letter_spacing": 1.0
+			"letter_spacing": 1.0,
+			"word_spacing": 0
 		},
 		"street": {
 			"coordinates": {
@@ -162,7 +180,8 @@
 				"y": 141
 			},
 			"font_size": 1.0,
-			"letter_spacing": 1.0
+			"letter_spacing": 1.0,
+			"word_spacing": 0
 		},
 		"unit": {
 			"coordinates": {
@@ -170,7 +189,8 @@
 				"y": 141
 			},
 			"font_size": 1.0,
-			"letter_spacing": 1.0
+			"letter_spacing": 1.0,
+			"word_spacing": 0
 		},
 		"city": {
 			"coordinates": {
@@ -178,7 +198,8 @@
 				"y": 148
 			},
 			"font_size": 1.0,
-			"letter_spacing": 1.0
+			"letter_spacing": 1.0,
+			"word_spacing": 0
 		},
 		"state_or_country": {
 			"coordinates": {
@@ -186,7 +207,8 @@
 				"y": 148
 			},
 			"font_size": 1.0,
-			"letter_spacing": 1.0
+			"letter_spacing": 1.0,
+			"word_spacing": 0
 		},
 		"zip": {
 			"coordinates": {
@@ -194,7 +216,8 @@
 				"y": 148
 			},
 			"font_size": 1.0,
-			"letter_spacing": 1.0
+			"letter_spacing": 1.0,
+			"word_spacing": 0
 		}
 	},
 	"change": {
@@ -204,7 +227,8 @@
 				"y": 159
 			},
 			"font_size": 1.0,
-			"letter_spacing": 1.0
+			"letter_spacing": 1.0,
+			"word_spacing": 0
 		},
 		"date_moved": {
 			"coordinates": {
@@ -212,7 +236,8 @@
 				"y": 159
 			},
 			"font_size": 1.0,
-			"letter_spacing": 1.0
+			"letter_spacing": 1.0,
+			"word_spacing": 0
 		},
 		"former_address": {
 			"coordinates": {
@@ -220,7 +245,8 @@
 				"y": 165
 			},
 			"font_size": 1.0,
-			"letter_spacing": 1.0
+			"letter_spacing": 1.0,
+			"word_spacing": 0
 		}
 	},
 	"assistance": {
@@ -236,7 +262,8 @@
 				"y": 199
 			},
 			"font_size": 1.0,
-			"letter_spacing": 1.0
+			"letter_spacing": 1.0,
+			"word_spacing": 0
 		},
 		"street": {
 			"coordinates": {
@@ -244,7 +271,8 @@
 				"y": 206
 			},
 			"font_size": 1.0,
-			"letter_spacing": 1.0
+			"letter_spacing": 1.0,
+			"word_spacing": 0
 		},
 		"unit": {
 			"coordinates": {
@@ -252,7 +280,8 @@
 				"y": 206
 			},
 			"font_size": 1.0,
-			"letter_spacing": 1.0
+			"letter_spacing": 1.0,
+			"word_spacing": 0
 		},
 		"city": {
 			"coordinates": {
@@ -260,7 +289,8 @@
 				"y": 213
 			},
 			"font_size": 1.0,
-			"letter_spacing": 1.0
+			"letter_spacing": 1.0,
+			"word_spacing": 0
 		},
 		"state": {
 			"coordinates": {
@@ -268,7 +298,8 @@
 				"y": 213
 			},
 			"font_size": 1.0,
-			"letter_spacing": 1.0
+			"letter_spacing": 1.0,
+			"word_spacing": 0
 		},
 		"zip": {
 			"coordinates": {
@@ -276,7 +307,8 @@
 				"y": 213
 			},
 			"font_size": 1.0,
-			"letter_spacing": 1.0
+			"letter_spacing": 1.0,
+			"word_spacing": 0
 		},
 		"signature": {
 			"coordinates": {
@@ -284,7 +316,8 @@
 				"y": 220
 			},
 			"font_size": 1.0,
-			"letter_spacing": 1.0
+			"letter_spacing": 1.0,
+			"word_spacing": 0
 		}
 	},
 	"signature": {
@@ -294,7 +327,8 @@
 				"y": 241
 			},
 			"font_size": 1.0,
-			"letter_spacing": 1.0
+			"letter_spacing": 1.0,
+			"word_spacing": 0
 		},
 		"signature.date": {
 			"coordinates": {
@@ -302,7 +336,8 @@
 				"y": 241
 			},
 			"font_size": 1.0,
-			"letter_spacing": 1.0
+			"letter_spacing": 1.0,
+			"word_spacing": 0
 		}
 	}
 }

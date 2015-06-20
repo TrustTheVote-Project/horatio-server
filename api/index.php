@@ -94,40 +94,29 @@ if ( ($method === FALSE) || !isset($router[$method]) )
  */
 if ($router[$method] == 'POST')
 {
+	
+	/*
+	 * Get the provided JSON.
+	 */
+	$uploaded_file = json_decode(file_get_contents('php://input'));
 
 	/*
-	 * TODO: Figure out how to sanitize JSON. Maybe check that the file contains colons, 
-	 * that's its within a certain length limit? Don't do anything to filter out non-ASCII
-	 * characters, because billions of people's names cannot be validated with ([A-Za-z]{2,}).
-	 *
-	 * Read the file into memory.
+	 * If the uploaded JSON file cannot be converted into an object by PHP, then display
+	 * an error.
 	 */
-	if (!empty($_FILES))
+	if ($uploaded_file === FALSE)
 	{
 
-		reset($_FILES);
-		$file = $_FILES[key($_FILES)];
-		$uploaded_file = json_decode(file_get_contents($file['tmp_name']));
+		header("HTTP/1.0 422 Unprocessable Entity");
 
-		/*
-		 * If the uploaded JSON file cannot be converted into an object by PHP, then display
-		 * an error.
-		 */
-		if ($uploaded_file === FALSE)
-		{
+		$response = array();
+		$response['valid'] = FALSE;
+    	$response['errors'] = array();
+    	$response['errors']['invalid JSON'] = 'JSON is too broken to decode';
+		$json = json_encode($response);
+		echo $json;
+		exit();
 
-			header("HTTP/1.0 422 Unprocessable Entity");
-
-			$response = array();
-			$response['valid'] = FALSE;
-	    	$response['errors'] = array();
-	    	$response['errors']['invalid JSON'] = 'JSON is too broken to decode';
-			$json = json_encode($response);
-			echo $json;
-			exit();
-
-		}
-		
 	}
 
 }

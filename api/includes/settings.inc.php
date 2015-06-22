@@ -42,3 +42,10 @@ define('SITE_URL', '');
  */
 define('SITE_OWNER', '');
 define('SITE_EMAIL', '');
+
+/*
+ * This is the email address to use if there is no valid email address for a registrar.
+ * In Virginia, that's info@elections.virginia.gov, which is the email address to which the
+ * State Board of Elections asks that ballot requests be emailed under such circumstances.
+ */
+define('FALLBACK_REGISTRAR_EMAIL', '');

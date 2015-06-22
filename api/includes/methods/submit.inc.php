@@ -65,11 +65,19 @@ if ($validator->isValid() === FALSE)
 $ab_id = substr(md5(json_encode($ab)), 0, 10);
 
 /*
- * Identify the registrar to whom this application should be sent.
+ * Identify the registrar to whom this application should be sent. If the proper registrar's
+ * email address is bouncing messages, send the message to the fallback address instead.
  */
 $gnis_id = $ab->election->locality_gnis;
 $registrars = json_decode(file_get_contents('includes/registrars.json'));
-$registrar_email = $registrars->$gnis_id->email;
+if (!isset($registrars->$gnis_id->invalid_email) || $registrars->$gnis_id->invalid_email === FALSE)
+{
+	$registrar_email = $registrars->$gnis_id->email;
+}
+else
+{
+	$registrar_email = FALLBACK_REGISTRAR_EMAIL;
+}
 
 /*
  * Save this application as a PDF.

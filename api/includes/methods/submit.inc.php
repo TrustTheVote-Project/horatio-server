@@ -85,30 +85,31 @@ if (DEBUG_MODE === TRUE)
 	$registrar_email = SITE_EMAIL;
 }
 
+/*
+ * Set up a new Mailgun instance.
+ */
 use Mailgun\Mailgun;
 $mg = new Mailgun(MAILGUN_API_KEY);
 
 /*
- * Assemble and send the message.
+ * Assemble the email.
  */
-$mg->sendMessage(MAILGUN_DOMAIN, array('from'    => SITE_EMAIL, 
-                                'to'      => $registrar_email,
-                                'subject' => 'Absentee Ballot Request', 
-                                'text'    => 'Please find attached an absentee ballot request.'),
-								array('attachment' =>
-									array(
-										array(
-											'filePath'		=> '/vol/jaquith.org/htdocs/api/applications/' . $ab_id . '.pdf',
-											'remoteName'	=> 'ab-' . $ab_id
-										)
-									)
-								)
-							);
+$message = $mg->MessageBuilder();
+$message->setFromAddress(SITE_EMAIL, array('first' => SITE_OWNER));
+$message->addToRecipient($registrar_email);
+$message->setSubject('Absentee Ballot Request');
+$message->setTextBody('Please find attached an absentee ballot request.');
+$message->addAttachment('@applications/' . $ab_id . '.pdf');
+$message->addCustomHeader('X-AB-ID', $ab_id);
+
+/*
+ * Send the email.
+ */
+$result = $mg->post(MAILGUN_DOMAIN . '/messages', $message->getMessage(), $message->getFiles());
 
 /*
  * If there was an error in the process of sending the message, report that to the client.
  */
-$result = $mg->get(MAILGUN_DOMAIN . '/log', array('limit' => 1));
 if ($result->http_response_code != '200')
 {
 
@@ -117,19 +118,19 @@ if ($result->http_response_code != '200')
     $response['errors'] = 'Could not send email. ' . $result->http_response_body->items[0]->message;
     echo json_encode($response);
 
-    /*
+	/*
      * Also, send a note to the site operator.
      */
-	$mg->sendMessage(MAILGUN_DOMAIN, array('from'    => SITE_EMAIL, 
-			                                'to'      => SITE_EMAIL,
-			                                'subject' => 'Absentee Ballot Request Failed', 
-			                                'text'    => 'A submitted absentee ballot request on '
-			                                	. SITE_URL . ' just failed to be sent via email,
-			                                	and requires manual intervention. See ' . $ab_id
-			                                	. 'at ' . SITE_URL . 'applications/' . $ab_id .
-			                                	'.pdf')
-										);
-    
+    $message = $mg->MessageBuilder();
+	$message->setFromAddress(SITE_EMAIL);
+	$message->addToRecipient(SITE_EMAIL);
+	$message->setSubject('Absentee Ballot Request Failed');
+	$message->setTextBody(	'A submitted absentee ballot request on ' . SITE_URL . ' just failed '
+							. 'to be sent via email, and requires manual intervention. See ' . $ab_id
+			                . 'at ' . SITE_URL . 'applications/' . $ab_id . '.pdf');
+	$message->addAttachment('@applications/' . $ab_id . '.pdf');
+	$mg->post(MAILGUN_DOMAIN . '/messages', $message->getMessage(), $message->getFiles());
+
     exit();
 
 }

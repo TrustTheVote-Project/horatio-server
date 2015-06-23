@@ -72,3 +72,45 @@ foreach ($registrars as &$registrar)
  * not clear what we'd do with the knowledge that it didn't work.
  */
 file_put_contents(json_encode($registrars)));
+
+/*
+ * Resend the application, this time to the fallback registrar email address.
+ */
+
+/*
+ * Set up a new Mailgun instance.
+ */
+use Mailgun\Mailgun;
+$mg = new Mailgun(MAILGUN_API_KEY);
+
+/*
+ * Assemble the email.
+ */
+$message = $mg->MessageBuilder();
+$message->setFromAddress(SITE_EMAIL, array('first' => SITE_OWNER));
+$message->addToRecipient(FALLBACK_REGISTRAR_EMAIL);
+$message->setSubject('Absentee Ballot Request');
+$message->setTextBody('Please find attached an absentee ballot request.');
+$message->addAttachment('@applications/' . $ab_id . '.pdf');
+$message->addCustomHeader('X-AB-ID', $ab_id);
+
+/*
+ * Send the email.
+ */
+$result = $mg->post(MAILGUN_DOMAIN . '/messages', $message->getMessage(), $message->getFiles());
+
+/*
+ * If the email couldn't be sent, notify the site operator.
+ */
+if ($result->http_response_code != '200')
+{
+    $message = $mg->MessageBuilder();
+	$message->setFromAddress(SITE_EMAIL, array('first' => SITE_OWNER));
+	$message->addToRecipient(SITE_EMAIL);
+	$message->setSubject('Absentee Ballot Request Failed');
+	$message->setTextBody(	'A submitted absentee ballot request on ' . SITE_URL . ' just failed '
+							. 'to be sent via email, and requires manual intervention. See '
+							. $ab_id . 'at ' . SITE_URL . 'applications/' . $ab_id . '.pdf');
+	$message->addAttachment('@applications/' . $ab_id . '.pdf');
+	$mg->post(MAILGUN_DOMAIN . '/messages', $message->getMessage(), $message->getFiles());
+}

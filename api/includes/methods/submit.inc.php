@@ -87,11 +87,21 @@ $values = $ab;
 require('includes/pdf_generation.inc.php');
 
 /*
- * Send the PDF to the site operator if the site is in debug mode.
+ * Send the PDF to the site operator if the site is in debug mode. Or, if we have an email address
+ * for the applicant, send it to that address. (This facilitates multi-user beta beta testing.)
  */
 if (DEBUG_MODE === TRUE)
 {
-	$registrar_email = SITE_EMAIL;
+
+    if (!empty($ab->more_info->email_fax) && filter_var($ab->more_info->email_fax, FILTER_VALIDATE_EMAIL) )
+    {
+        $registrar_email = $ab->more_info->email_fax;
+    }
+    else
+    {
+	   $registrar_email = SITE_EMAIL;
+    }
+
 }
 
 /*

@@ -146,8 +146,8 @@ if ($result->http_response_code != '200')
 	$message->addToRecipient(SITE_EMAIL);
 	$message->setSubject('Absentee Ballot Request Failed');
 	$message->setTextBody(	'A submitted absentee ballot request on ' . SITE_URL . ' just failed '
-							. 'to be sent via email, and requires manual intervention. See ' . $ab_id
-			                . 'at ' . SITE_URL . 'applications/' . $ab_id . '.pdf');
+							. 'to be sent via email, and requires manual intervention. See '
+                            . $ab_id . 'at ' . SITE_URL . 'applications/' . $ab_id . '.pdf');
 	$message->addAttachment('@applications/' . $ab_id . '.pdf');
 	$mg->post(MAILGUN_DOMAIN . '/messages', $message->getMessage(), $message->getFiles());
 

@@ -38,6 +38,7 @@ $validator->check($ab, $schema);
 if ($validator->isValid() === FALSE)
 {
 
+    header('HTTP/1.1 400 Bad Request');
     $response['valid'] = FALSE;
     $response['errors'] = array();
     foreach ($validator->getErrors() as $error)
@@ -121,6 +122,7 @@ $result = $mg->post(MAILGUN_DOMAIN . '/messages', $message->getMessage(), $messa
 if ($result->http_response_code != '200')
 {
 
+    header('HTTP/1.1 500 Internal Server Error');
 	$response['valid'] = TRUE;
 	$response['success'] = FALSE;
     $response['errors'] = 'Could not send email. ' . $result->http_response_body->items[0]->message;

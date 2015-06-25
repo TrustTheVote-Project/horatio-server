@@ -1,6 +1,6 @@
-# Absentee Ballot Server
+# Horatio: Absentee Ballot Server
 
-A server for an absentee ballot request form, with [a corresponding client](https://github.com/waldoj/absentee-client).
+A server for an absentee ballot request form, with [a corresponding client](https://github.com/waldoj/absentee-client). It is named for [Horatio Seymour](https://en.wikipedia.org/wiki/Horatio_Seymour), the former governor of New York, who was an ardent opponent of President Abraham Lincoln’s creation of an absentee balloting system to allow deployed Union soldiers to vote in the 1864 election.
 
 ## Overview
 

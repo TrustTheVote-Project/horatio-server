@@ -1,14 +1,14 @@
 # Horatio: Absentee Ballot Server
 
-A server for an absentee ballot request form, with [a corresponding client](https://github.com/waldoj/absentee-client). It is named for [Horatio Seymour](https://en.wikipedia.org/wiki/Horatio_Seymour), the former governor of New York, who was an ardent opponent of President Abraham Lincoln’s creation of an absentee balloting system to allow deployed Union soldiers to vote in the 1864 election.
+A server for an absentee ballot request form, with [a corresponding client](https://github.com/waldoj/absentee-client). Somebody who wants an absentee ballot can complete a web form, and Horatio will use those values to complete the state-sanctioned PDF and email it to the appropriate registrar. It is named for [Horatio Seymour](https://en.wikipedia.org/wiki/Horatio_Seymour), the former governor of New York, who was an ardent opponent of President Abraham Lincoln’s creation of an absentee balloting system to allow deployed Union soldiers to vote in the 1864 election.
 
 ## Overview
 
 Fundamentally, this is a system to:
 
 * validate provided JSON against a schema
-* save the JSON
-* convert the JSON into another format and transmit it by email
+* use the JSON contents to populate a PDF
+* send the contents of that PDF to a geographically-appropriate email and, if the email bounces, send it to a fallback address
 
 Which is to say that it's not very complicated.
 

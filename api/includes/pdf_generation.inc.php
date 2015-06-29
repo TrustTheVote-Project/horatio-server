@@ -79,7 +79,6 @@ foreach ($form as $section_name => $section)
 			elseif ( ($section_name == 'delivery') && ($field_name == 'to') )
 			{
 
-				$value = 'mailing address';
 				if ($value == 'mailing address')
 				{
 					$x = $field->coordinates->x + 58.3;

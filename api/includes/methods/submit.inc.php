@@ -177,7 +177,7 @@ $ab = new stdClass();
 $ab->request = new stdClass();
 $ab->request = $tmp;
 unset($tmp);
-$ab->message_id = $result->http_response_body->items[0]->message_id;
+$ab->message_id = $result->http_response_body->id;
 $ab->registrar = $registrars->$gnis_id;
 file_put_contents('applications/' . $ab_id . '.json', json_encode($ab));
 

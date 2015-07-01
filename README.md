@@ -12,6 +12,20 @@ Fundamentally, this is a system to:
 
 Which is to say that it's not very complicated.
 
+First, somebody completes the HTML form produced by [the Horatio client](https://github.com/TrustTheVote-Project/horatio-client/):
+
+![1](https://cloud.githubusercontent.com/assets/656758/8459465/7273aeb0-1feb-11e5-9390-5f7435c55634.png)
+
+The contents of the form are converted to JSON and submitted to the Horatio server:
+
+![2](https://cloud.githubusercontent.com/assets/656758/8459467/72771b36-1feb-11e5-8c51-3a18875bd549.png)
+
+Horatio maps the JSON values to PDF form fields:
+
+![3](https://cloud.githubusercontent.com/assets/656758/8459466/72759950-1feb-11e5-8f12-9898d33c3115.png)
+
+And, finally, it emails that PDF to the appropriate registrar.
+
 ## Instructions
 
 1. Download and install onto a web server, into a directory named `api/`. 

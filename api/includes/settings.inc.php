@@ -1,5 +1,17 @@
 <?php
 
+/**
+ * Sitewide configuration options
+ *
+ * PHP version 5
+ *
+ * @license		https://github.com/TrustTheVote-Project/horatio-server/blob/master/LICENSE
+ * @version		1.0
+ * @link		https://github.com/TrustTheVote-Project/horatio-server/
+ * @since		1.0
+ *
+ */
+
 /*
  * Whether the server is in debug mode. If it is in debug mode, HTTPS is not required, and PDFs
  * will not be delivered to registrars. If it is not in debug mode, HTTPS is strictly enforced for

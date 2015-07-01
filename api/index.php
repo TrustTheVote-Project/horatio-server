@@ -1,5 +1,17 @@
 <?php
 
+/**
+ * The main page for the site, which doubles as a router.
+ *
+ * PHP version 5
+ *
+ * @license		https://github.com/TrustTheVote-Project/horatio-server/blob/master/LICENSE
+ * @version		1.0
+ * @link		https://github.com/TrustTheVote-Project/horatio-server/
+ * @since		1.0
+ *
+ */
+
 /*
  * Include the site settings.
  */

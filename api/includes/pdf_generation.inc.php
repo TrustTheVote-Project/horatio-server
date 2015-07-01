@@ -1,5 +1,17 @@
 <?php
 
+/**
+ * The PDF generation functionality
+ *
+ * PHP version 5
+ *
+ * @license		https://github.com/TrustTheVote-Project/horatio-server/blob/master/LICENSE
+ * @version		1.0
+ * @link		https://github.com/TrustTheVote-Project/horatio-server/
+ * @since		1.0
+ *
+ */
+
 include("includes/mpdf60/mpdf.php");
 
 /*
@@ -20,7 +32,6 @@ $template = $mpdf->ImportPage(1);
 $mpdf->UseTemplate($template);
 
 $form = json_decode(file_get_contents('includes/application-map.json'));
-#$values = json_decode(file_get_contents('includes/ballot-completed.json'));
 
 /*
  * Iterate through every section of the form field.

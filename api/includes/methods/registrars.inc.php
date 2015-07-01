@@ -1,5 +1,17 @@
 <?php
 
+/**
+ * The registrar listing API method
+ *
+ * PHP version 5
+ *
+ * @license		https://github.com/TrustTheVote-Project/horatio-server/blob/master/LICENSE
+ * @version		1.0
+ * @link		https://github.com/TrustTheVote-Project/horatio-server/
+ * @since		1.0
+ *
+ */
+
 /*
  * Get the list of registrars.
  */

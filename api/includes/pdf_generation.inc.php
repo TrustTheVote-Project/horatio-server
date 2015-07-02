@@ -81,7 +81,21 @@ foreach ($form as $section_name => $section)
 				$value = 'x';
 
 			}
+			elseif ( ($section_name == 'election') && ($field_name == 'locality') )
+			{
 
+				if (substr($value, -7) == ' County')
+				{
+					$value = substr($value, 0, -7);
+					$mpdf->WriteText(116, 65, 'x');
+				}
+				elseif (substr($value, -5) == ' City')
+				{
+					$value = substr($value, 0, -5);
+					$mpdf->WriteText(132, 65, 'x');
+				}
+
+			}
 			elseif ( ($section_name == 'more_info') && ($field_name == 'telephone') )
 			{
 				$value = str_replace('-', ' ', $value);

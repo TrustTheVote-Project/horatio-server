@@ -98,7 +98,15 @@ foreach ($form as $section_name => $section)
 			}
 			elseif ( ($section_name == 'more_info') && ($field_name == 'telephone') )
 			{
-				$value = str_replace('-', ' ', $value);
+				$value = str_replace('-', '', $value);
+				$value = str_replace('(', '', $value);
+				$value = str_replace(')', '', $value);
+				$value = str_replace(' ', '', $value);
+				if (strlen($value) == 10)
+				{
+					$value = substr($value, 0, 3) . ' ' . substr($value, 3, 3) . ' '
+						. substr($value, -4);
+				}
 			}
 
 			elseif ( ($section_name == 'delivery') && ($field_name == 'to') )

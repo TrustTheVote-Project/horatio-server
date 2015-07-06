@@ -36,3 +36,4 @@ And, finally, it emails that PDF to the appropriate registrar.
 1. Choose "Webhooks" from the Mailgun dashboard, and for both "Hard bounces" and "Dropped messages," enter your site’s URL followed by `/bounce/?key=` and the value of `BOUNCE_API_KEY` that you established in step 4, e.g., `http://example.com/bounce/?key=qTugfIdCvB9SjymJW5yqQUofQu9iU119`.
 1. Ensure that the directory `applications/` has write permissions for the web server, but not read permissions (i.e., `drwx-wx-wx`), because that is where the completed absentee ballot requests will be stored.
 1. Ensure that the web server has permission to write to `includes/registrars.json`.
+1. Configure HTTPS before making the site public. The site will only run over plain HTTP while in debug mode.

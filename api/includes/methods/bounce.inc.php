@@ -27,12 +27,18 @@ if ($_GET['key'] != BOUNCE_API_KEY)
 /*
  * Get the message headers, so we can get our absentee ballot ID ("X-AB-ID") from it.
  */
-$headers = filter_input(INPUT_GET, 'message-headers', FILTER_UNSAFE_RAW, FILTER_FLAG_STRIP_HIGH);
+$headers = filter_input(INPUT_POST, 'message-headers', FILTER_UNSAFE_RAW, FILTER_FLAG_STRIP_HIGH);
+$tmp = json_decode($headers);
+$headers = array();
+foreach ($tmp as $entry)
+{
+	$headers[$entry{0}] = $entry{1};
+}
 
 /*
  * If an X-AB-ID header isn't present, something is fishy. Halt.
  */
-if (!isset($headers['X-AB-ID'] || strlen($headers['X-AB-ID']) !=  10)
+if (!isset($headers{'X-Ab-Id[0]'}) || strlen($headers{'X-Ab-Id[0]'}) !=  10)
 {
 	exit();
 }
@@ -40,7 +46,7 @@ if (!isset($headers['X-AB-ID'] || strlen($headers['X-AB-ID']) !=  10)
 /*
  * This header is safe, so bring it into the local scope.
  */
-$ab_id = $headers['X-AB-ID'];
+$ab_id = $headers{'X-Ab-Id[0]'};
 
 /*
  * If we don't have a copy of this application, again, something is fishy. Halt.
@@ -83,7 +89,7 @@ foreach ($registrars as &$registrar)
  * Save the updated registrars JSON file. We don't bother to check whether this works, because it's
  * not clear what we'd do with the knowledge that it didn't work.
  */
-file_put_contents(json_encode($registrars)));
+file_put_contents(json_encode($registrars));
 
 /*
  * Resend the application, this time to the fallback registrar email address.
@@ -125,4 +131,5 @@ if ($result->http_response_code != '200')
 							. $ab_id . 'at ' . SITE_URL . 'applications/' . $ab_id . '.pdf');
 	$message->addAttachment('@applications/' . $ab_id . '.pdf');
 	$mg->post(MAILGUN_DOMAIN . '/messages', $message->getMessage(), $message->getFiles());
+	exit();
 }

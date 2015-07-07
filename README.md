@@ -1,6 +1,6 @@
 # Horatio: Absentee Ballot Server
 
-A server for an absentee ballot request form, with [a corresponding client](https://github.com/waldoj/absentee-client). Somebody who wants an absentee ballot can complete a web form, and Horatio will use those values to complete the state-sanctioned PDF and email it to the appropriate registrar. It is named for [Horatio Seymour](https://en.wikipedia.org/wiki/Horatio_Seymour), the former governor of New York, who was an ardent opponent of President Abraham Lincoln’s creation of an absentee balloting system to allow deployed Union soldiers to vote in the 1864 election.
+A server for an absentee ballot request form, with [a corresponding client](https://github.com/waldoj/absentee-client). Somebody who wants an absentee ballot can complete a web form, and Horatio will use those values to complete the state-sanctioned PDF and email it to the appropriate registrar. The creation of Horatio was funded by Aneesh Chopra’s Innovate Virginia Fund PAC. It is named for [Horatio Seymour](https://en.wikipedia.org/wiki/Horatio_Seymour), the former governor of New York, who was an ardent opponent of President Abraham Lincoln’s creation of an absentee balloting system to allow deployed Union soldiers to vote in the 1864 election.
 
 ## Overview
 
@@ -37,3 +37,4 @@ And, finally, it emails that PDF to the appropriate registrar.
 1. Ensure that the directory `applications/` has write permissions for the web server, but not read permissions (i.e., `drwx-wx-wx`), because that is where the completed absentee ballot requests will be stored.
 1. Ensure that the web server has permission to write to `includes/registrars.json`.
 1. Configure HTTPS before making the site public. The site will only run over plain HTTP while in debug mode.
+2. 

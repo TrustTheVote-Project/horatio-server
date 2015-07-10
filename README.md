@@ -40,9 +40,6 @@ And, finally, it emails that PDF to the appropriate registrar.
 1. Choose "Webhooks" from the Mailgun dashboard, and for both "Hard bounces" and "Dropped messages," enter your site’s URL followed by `/bounce/?key=` and a 32-character random string, e.g. e.g., `http://example.com/bounce/?key=qTugfIdCvB9SjymJW5yqQUofQu9iU119`. Keep a copy of this 32-character string until the next step, where it’s the value of `BOUNCE_API_KEY`.
 1. Configure the site settings in `includes/settings.inc.php`.
 1. Ensure that the directory `applications/` has write permissions for the web server, but not read permissions (i.e., `drwx-wx-wx`), because that is where the completed absentee ballot requests will be stored.
-1. Ensure that the web server has permission to write to `includes/registrars.json`, because when registrars’ email addresses bounce, they need to be removed from the list of registrars.
-1. Install [the Horatio client](https://github.com/TrustTheVote-Project/horatio-client/) on as many websites as you care to have submit data to this server.
-1. When you’re ready start emailing absentee ballot applications to registrars, instead of having them emailed to you, edit `includes/settings.inc.php` to set `DEBUG_MODE` to `FALSE`.
 
 ## Credits
 

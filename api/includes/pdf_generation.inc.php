@@ -185,6 +185,12 @@ foreach ($form as $section_name => $section)
 
 	}
 
+	/*
+	 * Every application gets an "electronically signed" notice.
+	 */
+	$mpdf->WriteFixedPosHTML('<span style="letter-spacing: 0; word-spacing: 0; font-size: .75em;">(electronically signed)</span>',
+			114, 232, 100, 100);
+
 }
 
 /*

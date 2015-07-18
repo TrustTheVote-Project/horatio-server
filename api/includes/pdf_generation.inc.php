@@ -145,7 +145,7 @@ foreach ($form as $section_name => $section)
 			{
 
 				$components = array('first', 'middle', 'last', 'suffix');
-				$value = '/s/';
+				$value = '';
 				foreach ($components as $component)
 				{
 					$value .= utf8_encode($values->name->$component) . ' ';

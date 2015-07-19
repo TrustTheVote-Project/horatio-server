@@ -198,6 +198,7 @@ file_put_contents('applications/' . $ab_id . '.json', json_encode($ab));
  * Inform the client of the success.
  */
 $response['valid'] = TRUE;
+$response['success'] = TRUE;
 $response['id'] = $ab_id;
 $response['pdf_url'] = SITE_URL . 'applications/' . $ab_id . '.pdf';
 $response['registrar'] = (array) $registrars->$gnis_id;

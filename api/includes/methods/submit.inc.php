@@ -125,6 +125,28 @@ $message->addAttachment('@applications/' . $ab_id . '.pdf');
 $message->addCustomHeader('X-AB-ID', $ab_id);
 
 /*
+ * If there are email addresses to which the application should be BCCed, include them. 
+ */
+if (defined('APPLICATION_BCC'))
+{
+    if (strpos(APPLICATION_BCC, ',') !== FALSE)
+    {
+        $addresses = explode(',', APPLICATION_BCC);
+    }
+    else
+    {
+        $addresses = array(APPLICATION_BCC);
+    }
+    foreach ($addresses as $address)
+    {
+        if (filter_var(APPLICATION_BCC, FILTER_VALIDATE_EMAIL))
+        {
+            $message->addBccRecipient(APPLICATION_BCC);
+        }
+    }
+}
+
+/*
  * Send the email.
  */
 $result = $mg->post(MAILGUN_DOMAIN . '/messages', $message->getMessage(), $message->getFiles());

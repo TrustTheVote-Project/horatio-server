@@ -104,16 +104,7 @@ require('includes/pdf_generation.inc.php');
  */
 if (DEBUG_MODE === TRUE)
 {
-
-    if (!empty($ab->more_info->email_fax) && filter_var($ab->more_info->email_fax, FILTER_VALIDATE_EMAIL) )
-    {
-        $registrar_email = $ab->more_info->email_fax;
-    }
-    else
-    {
-	   $registrar_email = SITE_EMAIL;
-    }
-
+    $registrar_email = SITE_EMAIL;
 }
 
 /*

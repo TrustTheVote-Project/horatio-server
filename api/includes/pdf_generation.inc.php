@@ -141,18 +141,6 @@ foreach ($form as $section_name => $section)
 			{
 				$value = str_replace('-', ' ', $value);
 			}
-			elseif ( ($section_name == 'signature') && ($field_name == 'signed') )
-			{
-
-				$components = array('first', 'middle', 'last', 'suffix');
-				$value = '';
-				foreach ($components as $component)
-				{
-					$value .= utf8_encode($values->name->$component) . ' ';
-				}
-				$value = trim($value);
-
-			}
 
 			/*
 			 * If this field uses non-standard spacing or font sizes, add the style tags to

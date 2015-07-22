@@ -284,7 +284,8 @@
             "properties": {
                 "signed": {
                     "id": "signed",
-                    "type": "boolean"
+                    "type": "string",
+                    "minLength": 3
                 },
                 "date": {
                     "id": "date",

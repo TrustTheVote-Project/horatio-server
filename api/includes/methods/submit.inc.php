@@ -192,6 +192,7 @@ $ab->request = $tmp;
 unset($tmp);
 $ab->message_id = $result->http_response_body->id;
 $ab->registrar = $registrars->$gnis_id;
+$ab->client_url = $_SERVER['HTTP_REFERER'];
 file_put_contents('applications/' . $ab_id . '.json', json_encode($ab));
 
 /*

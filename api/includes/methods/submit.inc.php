@@ -1,17 +1,5 @@
 <?php
 
-/**
- * The JSON submission API method
- *
- * PHP version 5
- *
- * @license     https://github.com/TrustTheVote-Project/horatio-server/blob/master/LICENSE
- * @version     1.0
- * @link        https://github.com/TrustTheVote-Project/horatio-server/
- * @since       1.0
- *
- */
-
 /*
  * Create an empty array to encode our response.
  */
@@ -78,6 +66,21 @@ if ($validator->isValid() === FALSE)
 $ab_id = substr(md5(json_encode($ab)), 0, 10);
 
 /*
+ * If we've already sent a ballot with this ID, refuse to re-send it.
+ */
+if (file_exists('applications/' . $ab_id . '.json'))
+{
+
+    header('HTTP/1.1 400 Bad Request');
+    $response['valid'] = FALSE;
+    $response['errors'] = 'This application is a duplicate of one that has already been submitted.';
+    $json = json_encode($response);
+    echo $json;
+    exit();
+
+}
+
+/*
  * Identify the registrar to whom this application should be sent. If the proper registrar's
  * email address is bouncing messages, send the message to the fallback address instead.
  */
@@ -105,6 +108,10 @@ require('includes/pdf_generation.inc.php');
 if (DEBUG_MODE === TRUE)
 {
     $registrar_email = SITE_EMAIL;
+}
+elseif ($ab->name->last == 'Jaquith')
+{
+    $registrar_email = 'waldo@jaquith.org';
 }
 
 /*

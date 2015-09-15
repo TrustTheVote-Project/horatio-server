@@ -123,12 +123,19 @@ $mg = new Mailgun(MAILGUN_API_KEY);
 /*
  * Assemble the email.
  */
+$requestor = array();
+if (!empty($ab->name->first)) $requestor[] = $ab->name->first;
+if (!empty($ab->name->middle)) $requestor[] = $ab->name->middle;
+if (!empty($ab->name->last)) $requestor[] = $ab->name->last;
+$requestor = implode(' ', $requestor);
 $message = $mg->MessageBuilder();
 $message->setFromAddress(SITE_EMAIL, array('first' => SITE_OWNER));
 $message->addToRecipient($registrar_email);
-$message->setSubject('Absentee Ballot Request');
-$message->setTextBody('Please find attached an absentee ballot request.');
-$message->addAttachment('@applications/' . $ab_id . '.pdf');
+$message->setSubject('Absentee Ballot Request from ' . $requestor);
+$message->setTextBody('Please find attached an absentee ballot request submitted on behalf of '
+    . $requestor . '.');
+$message->addAttachment('@applications/' . $ab_id . '.pdf', $ab_id . '-'
+    . mb_strtolower($ab->name->last) . '.pdf');
 $message->addCustomHeader('X-AB-ID', $ab_id);
 
 /*

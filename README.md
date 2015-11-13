@@ -2,6 +2,8 @@
 
 A server for an absentee ballot request form, with [a corresponding client](https://github.com/waldoj/absentee-client). Somebody who wants an absentee ballot can complete a web form, and Horatio will use those values to complete the state-sanctioned PDF and email it to the appropriate registrar. The creation of Horatio was funded by Aneesh Chopra’s Innovate Virginia Fund PAC. It is named for [Horatio Seymour](https://en.wikipedia.org/wiki/Horatio_Seymour), the former governor of New York, who was an ardent opponent of President Abraham Lincoln’s creation of an absentee balloting system to allow deployed Union soldiers to vote in the 1864 election.
 
+Absentee ballot request forms may be submitted electronically in Virginia under the authority of [attorney general opinion #13-111](http://ag.virginia.gov/files/Opinions/2014/13-111_Hinshaw.pdf) and [approval of the State Board of Elections](https://elections.virginia.gov/Files/Media/Agendas/20150513Minutes.pdf). (p. 7, lines 189–215).
+
 ## Overview
 
 Fundamentally, this is a system to:

@@ -102,17 +102,21 @@ $values = $ab;
 require('includes/pdf_generation.inc.php');
 
 /*
- * Send the PDF to the site operator if the site is in debug mode. Or, if we have an email address
- * for the applicant, send it to that address. (This facilitates multi-user beta beta testing.)
+ * Send the PDF to the site operator if the site is in debug mode. Or, to facilitate debugging
+ * a live site, you can specify a field value that will trigger instead sending to a specified
+ * address. Here, if the last name on the application is "Cotrell-Duesing," then it will send
+ * the ballot to cd@example.org. This is necessary to avoid sending debug data to an actual
+ * registrar, which they do not appreciate. Of course, you may specify any field, value, and
+ * email address to override this.
  */
 if (DEBUG_MODE === TRUE)
 {
     $registrar_email = SITE_EMAIL;
 }
-elseif ($ab->name->last == 'Jaquith')
-{
-    $registrar_email = 'waldo@jaquith.org';
-}
+//elseif ($ab->name->last == 'Cotrell-Duesing')
+//{
+//    $registrar_email = 'cd@example.org';
+//}
 
 /*
  * Set up a new Mailgun instance.

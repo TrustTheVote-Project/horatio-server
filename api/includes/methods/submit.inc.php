@@ -113,10 +113,6 @@ if (DEBUG_MODE === TRUE)
 {
     $registrar_email = SITE_EMAIL;
 }
-//elseif ($ab->name->last == 'Cotrell-Duesing')
-//{
-//    $registrar_email = 'cd@example.org';
-//}
 
 /*
  * Set up a new Mailgun instance.

@@ -39,7 +39,7 @@ And, finally, it emails that PDF to the appropriate registrar.
 1. Install [Composer](https://getcomposer.org/) in the directory (e.g., `curl -sS https://getcomposer.org/installer | php`).
 1. Auto-install source libraries (JSON Schema, Mailgun, and Guzzle) with `php composer.phar install`.
 1. Set up an account with [Mailgun](https://mailgun.com/) (no credit card number required; <10,000 emails/month is free), following their instructions to get SPF records added to DNS for the domain.
-1. Choose "Webhooks" from the Mailgun dashboard, and for both "Hard bounces" and "Dropped messages," enter your site’s URL followed by `/bounce/?key=` and a 32-character random string, e.g. e.g., `http://example.com/bounce/?key=qTugfIdCvB9SjymJW5yqQUofQu9iU119`. Keep a copy of this 32-character string until the next step, where it’s the value of `BOUNCE_API_KEY`.
+1. Choose "Webhooks" from the Mailgun dashboard, and for both "Hard bounces" and "Dropped messages," enter your site’s URL followed by `/bounce/?key=` and a 32-character random string, e.g. `http://example.com/bounce/?key=qTugfIdCvB9SjymJW5yqQUofQu9iU119`. Keep a copy of this 32-character string until the next step, where it’s the value of `BOUNCE_API_KEY`.
 1. Configure the site settings in `includes/settings.inc.php`.
 1. Ensure that the directory `applications/` has write permissions for the web server, but not read permissions (i.e., `drwx-wx-wx`), because that is where the completed absentee ballot requests will be stored.
 
